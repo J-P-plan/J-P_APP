@@ -20,7 +20,7 @@ export default function RootLayout() {
 
 function StackLayout() {
     const [loaded, error] = useFonts({
-        Inter: require('../assets/fonts/Inter-Regular.ttf'),
+      	Suit: require("../assets/fonts/SUIT-Variable.ttf"),
     });
 
     useEffect(() => {
