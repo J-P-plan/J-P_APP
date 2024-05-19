@@ -1,9 +1,9 @@
 import { View, Text } from "react-native";
 
-export default function TripScreen() {
+export default function ReviewDetailScreen() {
   return (
     <View>
-      <Text>trip</Text>
+      <Text>ReviewDetail</Text>
     </View>
   );
 }
