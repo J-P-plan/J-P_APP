@@ -1,9 +1,9 @@
 import { View, Text } from "react-native";
 
-export default function TripScreen() {
+export default function MyPagePlanScreen() {
   return (
     <View>
-      <Text>trip</Text>
+      <Text>plan</Text>
     </View>
   );
 }

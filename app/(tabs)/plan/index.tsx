@@ -1,9 +1,9 @@
 import { View, Text } from "react-native";
 
-export default function SurveyScreen() {
+export default function PlanScreen() {
   return (
     <View>
-      <Text>survey</Text>
+      <Text>Plan</Text>
     </View>
   );
 }
