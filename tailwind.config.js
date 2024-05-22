@@ -1,11 +1,25 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: [
-        './App.{js,jsx,ts,tsx}',
-        './<custom directory>/**/*.{js,jsx,ts,tsx}',
-    ],
-    theme: {
-        extend: {},
+  content: ["./*.tsx", "./**/*.tsx", "./**/**/*.tsx"],
+  theme: {
+    colors: {
+      primary: { DEFAULT: "#FFC814", light: "#FFF8E0" },
+      secondary: "#78AAFF",
+      background: "#FAFAFA",
+      white: "#FFFFFF",
+      black: "#000000",
+      gray: {
+        100: "#F2F2F2",
+        200: "#E6E6E6",
+        300: "#B8B8B8",
+        400: "#999999",
+        500: "#808080",
+        600: "#666666",
+        700: "#4D4D4D",
+        800: "#333333",
+        900: "#1A1A1A",
+      },
     },
-    plugins: [],
+  },
+  plugins: [],
 };
