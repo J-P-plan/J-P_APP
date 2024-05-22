@@ -1,9 +1,9 @@
 import { View, Text } from "react-native";
 
-export default function MyPageTravelLogScreen() {
+export default function MyPageScreen() {
   return (
     <View>
-      <Text>TravelLog</Text>
+      <Text>MyPageScreen</Text>
     </View>
   );
 }
