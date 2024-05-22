@@ -1,9 +1,11 @@
-import { View, Text } from "react-native";
+import { View, Text, SafeAreaView, ScrollView } from "react-native";
 
 export default function HomeScreen() {
   return (
-    <View>
-      <Text>home</Text>
-    </View>
+    <SafeAreaView tw="flex-1 bg-background">
+      <ScrollView>
+        <Text tw="text-primary">home</Text>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
