@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import "react-native-reanimated";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { useFonts } from "expo-font";
 import { Stack, useRouter } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
@@ -13,7 +14,9 @@ const queryClient = new QueryClient();
 export default function RootLayout() {
   return (
     <QueryClientProvider client={queryClient}>
-      <StackLayout />
+      <GestureHandlerRootView>
+        <StackLayout />
+      </GestureHandlerRootView>
     </QueryClientProvider>
   );
 }
