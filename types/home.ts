@@ -5,6 +5,12 @@ export type HomeSectionId =
   | "travel-log"
   | "review";
 
+export type HomeListScreenId =
+  | "place-trending"
+  | "city-trending"
+  | "place-theme"
+  | "place-recommend";
+
 export interface HomeSectionItemProps {
   id: HomeSectionId;
 }

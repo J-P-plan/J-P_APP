@@ -1,38 +1,130 @@
-import { Text, TouchableOpacity, View } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Stack } from "expo-router";
-import Feather from "@expo/vector-icons/Feather";
+import {
+  HomeIndexHeaderLeft,
+  HomeIndexHeaderRight,
+  HeaderBack,
+  HeaderLike,
+} from "@/components/headers/HomeHeaders";
+import HOME_MESSAGE from "@/message/home";
 import COLORS from "@/constants/colors";
 
 export default function HomeStacksLayout() {
-  const { top } = useSafeAreaInsets();
-
   return (
     <Stack>
       <Stack.Screen
         name="index"
         options={{
-          header: () => (
-            <View
-              className="flex-row items-center justify-between p-4 px-5 bg-background"
-              style={{ paddingTop: top }}
-            >
-              <TouchableOpacity className="items-center justify-center w-[50px] h-[45px] rounded-lg bg-gray-200">
-                <Text>LOGO</Text>
-              </TouchableOpacity>
-              <TouchableOpacity>
-                <Feather name="bell" size={24} color={COLORS.gray[900]} />
-              </TouchableOpacity>
-            </View>
-          ),
+          title: "",
+          headerLeft: () => <HomeIndexHeaderLeft />,
+          headerRight: () => <HomeIndexHeaderRight />,
+          headerShadowVisible: false,
+          headerStyle: { backgroundColor: COLORS.background },
+          contentStyle: {
+            paddingVertical: 8,
+            backgroundColor: COLORS.background,
+          },
         }}
       />
-      <Stack.Screen name="place-trending" />
-      <Stack.Screen name="city-trending" />
-      <Stack.Screen name="place-theme" />
-      <Stack.Screen name="place-recommend" />
-      <Stack.Screen name="(detail)/city/[id]" />
-      <Stack.Screen name="(detail)/place/[id]" />
+      <Stack.Screen
+        name="place-trending"
+        options={{
+          title: HOME_MESSAGE.homeListHeader["place-trending"],
+          headerLeft: () => <HeaderBack />,
+          headerShadowVisible: false,
+          headerStyle: { backgroundColor: COLORS.background },
+          headerTitleStyle: {
+            fontSize: 20,
+            fontWeight: 700,
+            color: COLORS.gray[900],
+          },
+          contentStyle: {
+            paddingVertical: 8,
+            backgroundColor: COLORS.background,
+          },
+        }}
+      />
+      <Stack.Screen
+        name="city-trending"
+        options={{
+          title: HOME_MESSAGE.homeListHeader["city-trending"],
+          headerLeft: () => <HeaderBack />,
+          headerShadowVisible: false,
+          headerStyle: { backgroundColor: COLORS.background },
+          headerTitleStyle: {
+            fontSize: 20,
+            fontWeight: 700,
+            color: COLORS.gray[900],
+          },
+          contentStyle: {
+            paddingVertical: 8,
+            backgroundColor: COLORS.background,
+          },
+        }}
+      />
+      <Stack.Screen
+        name="place-theme"
+        options={{
+          title: HOME_MESSAGE.homeListHeader["place-theme"],
+          headerLeft: () => <HeaderBack />,
+          headerShadowVisible: false,
+          headerStyle: { backgroundColor: COLORS.background },
+          headerTitleStyle: {
+            fontSize: 20,
+            fontWeight: 700,
+            color: COLORS.gray[900],
+          },
+          contentStyle: {
+            paddingVertical: 8,
+            backgroundColor: COLORS.background,
+          },
+        }}
+      />
+      <Stack.Screen
+        name="place-recommend"
+        options={{
+          title: HOME_MESSAGE.homeListHeader["place-recommend"],
+          headerLeft: () => <HeaderBack />,
+          headerShadowVisible: false,
+          headerStyle: { backgroundColor: COLORS.background },
+          headerTitleStyle: {
+            fontSize: 20,
+            fontWeight: 700,
+            color: COLORS.gray[900],
+          },
+          contentStyle: {
+            paddingVertical: 8,
+            backgroundColor: COLORS.background,
+          },
+        }}
+      />
+      <Stack.Screen
+        name="(detail)/city/[id]"
+        options={{
+          title: "",
+          headerLeft: () => <HeaderBack />,
+          headerRight: () => <HeaderLike />,
+          headerShadowVisible: false,
+          headerStyle: { backgroundColor: COLORS.background },
+          contentStyle: {
+            paddingVertical: 8,
+            backgroundColor: COLORS.background,
+          },
+        }}
+      />
+      <Stack.Screen
+        name="(detail)/place/[id]"
+        options={{
+          title: "",
+          headerLeft: () => <HeaderBack />,
+          headerRight: () => <HeaderLike />,
+          headerShadowVisible: false,
+          headerStyle: { backgroundColor: COLORS.background },
+          contentStyle: {
+            paddingVertical: 8,
+            backgroundColor: COLORS.background,
+          },
+        }}
+      />
     </Stack>
   );
 }
