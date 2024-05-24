@@ -16,7 +16,7 @@ export default function TabsLayout() {
           height: 80,
           paddingHorizontal: 10,
           paddingVertical: 0,
-          backgroundColor: "transparent",
+          backgroundColor: COLORS.background,
         },
       }}
     >
