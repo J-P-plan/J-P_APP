@@ -1,10 +1,11 @@
 import { Text, View, Image } from "react-native";
+import { Link } from "expo-router";
 import type { HomeSectionItemProps } from "@/types/home";
 import type { PlaceData } from "@/types/api/place";
-import { Link } from "expo-router";
+import type { ReviewsData } from "@/types/api/review";
 
 interface ItemProps {
-  data: PlaceData;
+  data: PlaceData | ReviewsData;
 }
 
 export default function HomeSectionListItem({
@@ -13,20 +14,21 @@ export default function HomeSectionListItem({
 }: HomeSectionItemProps & ItemProps) {
   switch (id) {
     case "place-trending":
-      return <PlaceItem data={data} type="trending" />;
+      return <PlaceItem data={data as PlaceData} type="trending" />;
     case "city-trending":
-      return <CityItem data={data} />;
+      return <CityItem data={data as PlaceData} />;
     case "place-theme":
-      return <PlaceItem data={data} type="theme" />;
+      return <PlaceItem data={data as PlaceData} type="theme" />;
     case "travel-log":
-      return <TravelLogItem data={data} />;
+      return;
     case "review":
-      return <ReviewItem data={data} />;
+      return <ReviewItem data={data as ReviewsData} />;
   }
 }
 
-interface PlaceItemProps extends ItemProps {
-  type: "trending" | "theme";
+interface PlaceItemProps {
+  data: PlaceData;
+  type?: "trending" | "theme";
 }
 
 const PlaceItem = ({ data, type }: PlaceItemProps) => {
@@ -46,7 +48,7 @@ const PlaceItem = ({ data, type }: PlaceItemProps) => {
   );
 };
 
-const CityItem = ({ data }: ItemProps) => {
+const CityItem = ({ data }: PlaceItemProps) => {
   return (
     <Link href={`/(tabs)/home/(detail)/city/${data.placeId}`}>
       <View tw="mr-2">
@@ -61,18 +63,35 @@ const CityItem = ({ data }: ItemProps) => {
   );
 };
 
-const TravelLogItem = ({ data }: ItemProps) => {
-  return (
-    <View>
-      <Text>{data.name}</Text>
-    </View>
-  );
-};
+// const TravelLogItem = ({ data }: ItemProps) => {
+//   return (
+//     <View>
+//       <Text>{data.name}</Text>
+//     </View>
+//   );
+// };
 
-const ReviewItem = ({ data }: ItemProps) => {
+interface ReviewItemProps {
+  data: ReviewsData;
+}
+
+const ReviewItem = ({ data }: ReviewItemProps) => {
   return (
-    <View>
-      <Text>{data.name}</Text>
+    <View tw="flex-row mb-3">
+      <View tw="w-[84px] h-[80px] mr-2.5 rounded-2xl bg-gray-300"></View>
+      <View>
+        <Text>{data.subject}</Text>
+        {/* <Text>{data.content}</Text> */}
+        <View tw="flex-row justify-between">
+          <View>
+            <Text>{data.userCompactResDto.nickname}</Text>
+          </View>
+          <View tw="flex-row">
+            <Text>{data.star}</Text>
+            <Text>{data.commentCnt}</Text>
+          </View>
+        </View>
+      </View>
     </View>
   );
 };

@@ -1,3 +1,5 @@
+import type { PageInfo } from "./common";
+
 export interface PlaceResponse {
   pageInfo: PageInfo;
   data: PlaceData[];
@@ -9,14 +11,6 @@ export interface PlaceData {
   name: string;
   subName: string;
   photoUrl: null;
-}
-
-export interface PageInfo {
-  page: number;
-  hasNext: boolean;
-  hasPrevious: boolean;
-  totalElements: number;
-  totalPages: number;
 }
 
 export type PlaceType = "TRAVEL_PLACE" | "CITY" | "THEME";
