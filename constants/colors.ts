@@ -1,7 +1,7 @@
 const COLORS = {
   primary: { DEFAULT: "#FFC814", light: "#FFF8E0" },
-  secondary: { DEFAULT: "#78AAFF", light: "#6979F8" },
-  point: { red: "#FF5757", yellow: "#FFD990" },
+  secondary: { DEFAULT: "#6979F8", light: "#E7E9FE" },
+  point: { like: "#FF5757", star: "#FFD990", mark: "#FF9E80" },
   background: "#FAFAFA",
   white: "#FFFFFF",
   black: "#000000",
