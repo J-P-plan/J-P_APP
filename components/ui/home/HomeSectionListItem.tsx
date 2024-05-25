@@ -35,7 +35,13 @@ const PlaceItem = ({ data, type }: PlaceItemProps) => {
   return (
     <Link href={`/(tabs)/home/(detail)/place/${data.placeId}`}>
       <View tw="mr-2">
-        <View tw="w-[120px] h-[120px] rounded-2xl bg-gray-300"></View>
+        <View tw="w-[120px] h-[120px] rounded-2xl bg-gray-300">
+          {type === "theme" && (
+            <View tw="absolute top-[15px] right-[11px] items-center justify-center w-[43px] h-[20px] rounded-full bg-white/60">
+              <Text tw="font-normal text-[10px] text-black">{"여행지"}</Text>
+            </View>
+          )}
+        </View>
         {/* <Image source={{ uri: data.photoUrl }} /> */}
         <Text tw="ml-1.5 mt-2 font-bold text-sm text-gray-900">
           {data.name}

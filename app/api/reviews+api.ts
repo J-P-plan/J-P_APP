@@ -1,14 +1,26 @@
-import { ReviewsResponse } from "@/types/api/review";
+export async function GET(request: Request) {
+  const home = new URL(request.url).searchParams.get("home") ? true : false;
 
-export async function GET() {
+  //   const elementCnt = home ? 2 : 10;
+
   //   const response = await fetch(
-  //     `https://jandp-travel.kro.kr/reviews?page=1&sort=HOT&elementCnt=2`
+  //     `https://jandp-travel.kro.kr/reviews?page=1&sort=HOT&elementCnt=${elementCnt}`
   //   );
 
   //   const res = await response.json();
 
   //   return Response.json(res);
-  return Response.json(mockData);
+
+  let data: any = mockData;
+
+  if (home) {
+    data = {
+      pageInfo: data.pageInfo,
+      data: data.data.slice(0, 2),
+    };
+  }
+
+  return Response.json(data);
 }
 
 // export interface ReviewsData {
@@ -27,7 +39,7 @@ export async function GET() {
 //   picture: string;
 // }
 
-const mockData: ReviewsResponse = {
+const mockData = {
   pageInfo: {
     page: 1,
     hasNext: true,
@@ -52,6 +64,90 @@ const mockData: ReviewsResponse = {
     },
     {
       id: 14,
+      subject: "남한산성 둘레길 최고의 뷰 즐기기",
+      content:
+        "주말 당일치기로 둘레길 등산하고 경치도 구경하고 왔어요. 총 1시간정도 가볍게 걸었어요. 길도 찾기",
+      userCompactResDto: {
+        id: 4664,
+        nickname: "은지",
+        picture: "",
+      },
+      commentCnt: 8,
+      star: 4.8,
+      placeId: "ChIJzZqMtnOifDURQ0_wKF2H2gg",
+    },
+    {
+      id: 13,
+      subject: "남한산성 둘레길 최고의 뷰 즐기기",
+      content:
+        "주말 당일치기로 둘레길 등산하고 경치도 구경하고 왔어요. 총 1시간정도 가볍게 걸었어요. 길도 찾기",
+      userCompactResDto: {
+        id: 4664,
+        nickname: "은지",
+        picture: "",
+      },
+      commentCnt: 8,
+      star: 4.8,
+      placeId: "ChIJzZqMtnOifDURQ0_wKF2H2gg",
+    },
+    {
+      id: 12,
+      subject: "남한산성 둘레길 최고의 뷰 즐기기",
+      content:
+        "주말 당일치기로 둘레길 등산하고 경치도 구경하고 왔어요. 총 1시간정도 가볍게 걸었어요. 길도 찾기",
+      userCompactResDto: {
+        id: 4664,
+        nickname: "은지",
+        picture: "",
+      },
+      commentCnt: 8,
+      star: 4.8,
+      placeId: "ChIJzZqMtnOifDURQ0_wKF2H2gg",
+    },
+    {
+      id: 11,
+      subject: "남한산성 둘레길 최고의 뷰 즐기기",
+      content:
+        "주말 당일치기로 둘레길 등산하고 경치도 구경하고 왔어요. 총 1시간정도 가볍게 걸었어요. 길도 찾기",
+      userCompactResDto: {
+        id: 4664,
+        nickname: "은지",
+        picture: "",
+      },
+      commentCnt: 8,
+      star: 4.8,
+      placeId: "ChIJzZqMtnOifDURQ0_wKF2H2gg",
+    },
+    {
+      id: 10,
+      subject: "남한산성 둘레길 최고의 뷰 즐기기",
+      content:
+        "주말 당일치기로 둘레길 등산하고 경치도 구경하고 왔어요. 총 1시간정도 가볍게 걸었어요. 길도 찾기",
+      userCompactResDto: {
+        id: 4664,
+        nickname: "은지",
+        picture: "",
+      },
+      commentCnt: 8,
+      star: 4.8,
+      placeId: "ChIJzZqMtnOifDURQ0_wKF2H2gg",
+    },
+    {
+      id: 9,
+      subject: "남한산성 둘레길 최고의 뷰 즐기기",
+      content:
+        "주말 당일치기로 둘레길 등산하고 경치도 구경하고 왔어요. 총 1시간정도 가볍게 걸었어요. 길도 찾기",
+      userCompactResDto: {
+        id: 4664,
+        nickname: "은지",
+        picture: "",
+      },
+      commentCnt: 8,
+      star: 4.8,
+      placeId: "ChIJzZqMtnOifDURQ0_wKF2H2gg",
+    },
+    {
+      id: 8,
       subject: "남한산성 둘레길 최고의 뷰 즐기기",
       content:
         "주말 당일치기로 둘레길 등산하고 경치도 구경하고 왔어요. 총 1시간정도 가볍게 걸었어요. 길도 찾기",

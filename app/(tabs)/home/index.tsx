@@ -10,8 +10,8 @@ export default function HomeScreen() {
   const textInputProps = useSearchInput();
 
   return (
-    <SafeAreaView tw="flex-1">
-      <ScrollView tw="pt-2 px-5">
+    <SafeAreaView tw="flex-1 mb-16">
+      <ScrollView tw="px-5 pt-2">
         <View tw="flex-row items-center h-[56px] mb-[28px] px-[22px] rounded-full border-[0.8px] border-gray-200 bg-white">
           <Feather name="search" size={16.8} color={COLORS.gray[900]} />
           <TextInput
