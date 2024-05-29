@@ -1,7 +1,8 @@
 import { Text, TouchableOpacity } from "react-native";
 import { useRouter } from "expo-router";
-import Feather from "@expo/vector-icons/Feather";
-import COLORS from "@/constants/colors";
+import BellIcon from "@/assets/icons/header/bell.svg";
+import ChevronLeftIcon from "@/assets/icons/header/chevronLeft.svg";
+import HeartIcon from "@/assets/icons/header/heart.svg";
 
 export const HomeIndexHeaderLeft = () => {
   return (
@@ -14,7 +15,7 @@ export const HomeIndexHeaderLeft = () => {
 export const HomeIndexHeaderRight = () => {
   return (
     <TouchableOpacity>
-      <Feather name="bell" size={24} color={COLORS.gray[900]} />
+      <BellIcon />
     </TouchableOpacity>
   );
 };
@@ -24,7 +25,7 @@ export const HeaderBack = () => {
 
   return (
     <TouchableOpacity onPress={back}>
-      <Feather name="chevron-left" size={24} color={COLORS.gray[900]} />
+      <ChevronLeftIcon />
     </TouchableOpacity>
   );
 };
@@ -34,7 +35,7 @@ export const HeaderLike = () => {
 
   return (
     <TouchableOpacity tw="mr-3" onPress={handleLike}>
-      <Feather name="heart" size={24} color={COLORS.gray[900]} />
+      <HeartIcon />
     </TouchableOpacity>
   );
 };

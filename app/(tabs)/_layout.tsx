@@ -1,5 +1,9 @@
 import { Tabs } from "expo-router";
-import Feather from "@expo/vector-icons/Feather";
+import HomeIcon from "@/assets/icons/tabs/home.svg";
+import SearchIcon from "@/assets/icons/tabs/search.svg";
+import PlanIcon from "@/assets/icons/tabs/plan.svg";
+import TravelReviewIcon from "@/assets/icons/tabs/travelReview.svg";
+import MypageIcon from "@/assets/icons/tabs/mypage.svg";
 import COLORS from "@/constants/colors";
 
 export default function TabsLayout() {
@@ -25,9 +29,7 @@ export default function TabsLayout() {
         options={{
           headerShown: false,
           title: "홈",
-          tabBarIcon: ({ color }) => (
-            <Feather name="home" size={24} color={color} />
-          ),
+          tabBarIcon: ({ color }) => <HomeIcon color={color} />,
           tabBarLabelStyle: { fontSize: 10 },
         }}
       />
@@ -35,9 +37,7 @@ export default function TabsLayout() {
         name="search/index"
         options={{
           title: "검색",
-          tabBarIcon: ({ color }) => (
-            <Feather name="search" size={24} color={color} />
-          ),
+          tabBarIcon: ({ color }) => <SearchIcon color={color} />,
           tabBarLabelStyle: { fontSize: 10 },
         }}
       />
@@ -45,9 +45,7 @@ export default function TabsLayout() {
         name="plan/index"
         options={{
           title: "일정",
-          tabBarIcon: ({ color }) => (
-            <Feather name="calendar" size={24} color={color} />
-          ),
+          tabBarIcon: ({ color }) => <PlanIcon color={color} />,
           tabBarLabelStyle: { fontSize: 10 },
         }}
       />
@@ -55,9 +53,7 @@ export default function TabsLayout() {
         name="(travelReview)"
         options={{
           title: "리뷰/여행기",
-          tabBarIcon: ({ color }) => (
-            <Feather name="message-square" size={24} color={color} />
-          ),
+          tabBarIcon: ({ color }) => <TravelReviewIcon color={color} />,
           tabBarLabelStyle: { fontSize: 10 },
         }}
       />
@@ -65,9 +61,7 @@ export default function TabsLayout() {
         name="mypage"
         options={{
           title: "마이페이지",
-          tabBarIcon: ({ color }) => (
-            <Feather name="user" size={24} color={color} />
-          ),
+          tabBarIcon: ({ color }) => <MypageIcon color={color} />,
           tabBarLabelStyle: { fontSize: 10 },
         }}
       />
