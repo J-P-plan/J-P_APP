@@ -6,7 +6,7 @@ import HeartIcon from "@/assets/icons/header/heart.svg";
 
 export const HomeIndexHeaderLeft = () => {
   return (
-    <TouchableOpacity tw="items-center justify-center w-[50px] h-[45px] mt-1 ml-2 rounded-lg bg-gray-200">
+    <TouchableOpacity tw="items-center justify-center w-[50px] h-[45px] mt-1 ml-2 rounded-[8px] bg-gray-200">
       <Text tw="font-medium text-xs">LOGO</Text>
     </TouchableOpacity>
   );
