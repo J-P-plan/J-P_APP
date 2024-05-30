@@ -6,7 +6,7 @@ import type { HomeSectionItemProps } from "@/types/home";
 export default function HomeSectionHeader({ id }: HomeSectionItemProps) {
   return (
     <View tw="flex-row items-center justify-between w-[343px] mb-3">
-      <Text tw="font-bold text-[20px] text-gray-900">
+      <Text tw="font-bold text-xl text-gray-900">
         {HOME_MESSAGE.homeSectionTitle[id]}
       </Text>
       <Link
@@ -18,7 +18,7 @@ export default function HomeSectionHeader({ id }: HomeSectionItemProps) {
         asChild
       >
         <TouchableOpacity>
-          <Text tw="text-[12px] text-gray-300">
+          <Text tw="text-xs text-gray-300">
             {HOME_MESSAGE.homeSectionTitle.more}
           </Text>
         </TouchableOpacity>
