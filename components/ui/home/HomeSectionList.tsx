@@ -27,7 +27,7 @@ export default function HomeSectionList({ id }: HomeSectionItemProps) {
             ))}
         </View>
       ) : (
-        <ScrollView tw="pt-1" horizontal showsHorizontalScrollIndicator={false}>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} tw="pt-1">
           {data &&
             data.data.map((item) => (
               <HomeSectionListItem key={item.id} id={id} data={item} />

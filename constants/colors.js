@@ -1,4 +1,4 @@
-const COLORS = {
+module.exports = {
   primary: { DEFAULT: "#FFC814", light: "#FFF8E0" },
   secondary: { DEFAULT: "#6979F8", light: "#E7E9FE" },
   point: { like: "#FF5757", star: "#FFD990", mark: "#FF9E80" },
@@ -17,5 +17,3 @@ const COLORS = {
     900: "#1A1A1A",
   },
 };
-
-export default COLORS;

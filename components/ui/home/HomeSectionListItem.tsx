@@ -3,6 +3,8 @@ import { Link } from "expo-router";
 import type { HomeSectionItemProps } from "@/types/home";
 import type { PlaceData } from "@/types/api/place";
 import type { ReviewsData } from "@/types/api/review";
+import StarIcon from "@/assets/icons/review/star.svg";
+import ReviewIcon from "@/assets/icons/review/review.svg";
 
 interface ItemProps {
   data: PlaceData | ReviewsData;
@@ -35,10 +37,10 @@ const PlaceItem = ({ data, type }: PlaceItemProps) => {
   return (
     <Link href={`/(tabs)/home/(detail)/place/${data.placeId}`}>
       <View tw="mr-2">
-        <View tw="w-[120px] h-[120px] rounded-2xl bg-gray-300">
+        <View tw="w-[120px] h-[120px] rounded bg-gray-300">
           {type === "theme" && (
-            <View tw="absolute top-[15px] right-[11px] items-center justify-center w-[43px] h-[20px] rounded-full bg-white/60">
-              <Text tw="font-normal text-[10px] text-black">{"여행지"}</Text>
+            <View tw="absolute top-[15px] right-[11px] items-center justify-center w-[43px] h-5 rounded-large bg-white/60">
+              <Text tw="text-[10px] text-black">{"여행지"}</Text>
             </View>
           )}
         </View>
@@ -58,8 +60,8 @@ const CityItem = ({ data }: PlaceItemProps) => {
   return (
     <Link href={`/(tabs)/home/(detail)/city/${data.placeId}`}>
       <View tw="mr-2">
-        <View tw="w-[120px] h-[120px] rounded-2xl bg-gray-300">
-          <View tw="absolute bottom-[13px] right-[10.5px] items-center justify-center w-[45px] h-[25px] rounded-full bg-white/60">
+        <View tw="w-[120px] h-[120px] rounded bg-gray-300">
+          <View tw="absolute bottom-[13px] right-[10.5px] items-center justify-center w-[45px] h-[25px] rounded-large bg-white/60">
             <Text tw="font-bold text-sm text-gray-700">{data.name}</Text>
           </View>
         </View>
@@ -83,18 +85,27 @@ interface ReviewItemProps {
 
 const ReviewItem = ({ data }: ReviewItemProps) => {
   return (
-    <View tw="flex-row mb-3">
-      <View tw="w-[84px] h-[80px] mr-2.5 rounded-2xl bg-gray-300"></View>
-      <View>
-        <Text>{data.subject}</Text>
-        {/* <Text>{data.content}</Text> */}
-        <View tw="flex-row justify-between">
-          <View>
-            <Text>{data.userCompactResDto.nickname}</Text>
+    <View tw="flex-row w-[343px] h-20 mb-3">
+      <View tw="w-[84px] h-full mr-2.5 rounded bg-gray-300"></View>
+      <View tw="flex-1 justify-between">
+        <View>
+          <Text numberOfLines={1} tw="font-bold text-sm">
+            {data.subject}
+          </Text>
+          <Text numberOfLines={1} tw="text-sm">
+            {data.content}
+          </Text>
+        </View>
+        <View tw="flex-row items-center justify-between">
+          <View tw="flex-row items-center">
+            <View tw="w-6 h-6 rounded-full bg-secondary-light"></View>
+            <Text tw="ml-2 text-xs">{data.userCompactResDto.nickname}</Text>
           </View>
           <View tw="flex-row">
-            <Text>{data.star}</Text>
-            <Text>{data.commentCnt}</Text>
+            <StarIcon />
+            <Text tw="ml-[3px] mr-2 text-xs">{data.star}</Text>
+            <ReviewIcon />
+            <Text tw="ml-[3px] text-xs">{data.commentCnt}</Text>
           </View>
         </View>
       </View>

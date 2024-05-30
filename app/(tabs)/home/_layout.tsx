@@ -20,7 +20,7 @@ export default function HomeStacksLayout() {
           headerShadowVisible: false,
           headerStyle: { backgroundColor: COLORS.background },
           contentStyle: {
-            paddingVertical: 8,
+            paddingVertical: 12,
             backgroundColor: COLORS.background,
           },
         }}
@@ -38,7 +38,7 @@ export default function HomeStacksLayout() {
             color: COLORS.gray[900],
           },
           contentStyle: {
-            paddingVertical: 8,
+            paddingVertical: 12,
             backgroundColor: COLORS.background,
           },
         }}
@@ -56,7 +56,7 @@ export default function HomeStacksLayout() {
             color: COLORS.gray[900],
           },
           contentStyle: {
-            paddingVertical: 8,
+            paddingVertical: 12,
             backgroundColor: COLORS.background,
           },
         }}
@@ -74,7 +74,7 @@ export default function HomeStacksLayout() {
             color: COLORS.gray[900],
           },
           contentStyle: {
-            paddingVertical: 8,
+            paddingVertical: 12,
             backgroundColor: COLORS.background,
           },
         }}
@@ -92,7 +92,7 @@ export default function HomeStacksLayout() {
             color: COLORS.gray[900],
           },
           contentStyle: {
-            paddingVertical: 8,
+            paddingVertical: 12,
             backgroundColor: COLORS.background,
           },
         }}
@@ -106,7 +106,7 @@ export default function HomeStacksLayout() {
           headerShadowVisible: false,
           headerStyle: { backgroundColor: COLORS.background },
           contentStyle: {
-            paddingVertical: 8,
+            paddingVertical: 12,
             backgroundColor: COLORS.background,
           },
         }}
@@ -120,7 +120,7 @@ export default function HomeStacksLayout() {
           headerShadowVisible: false,
           headerStyle: { backgroundColor: COLORS.background },
           contentStyle: {
-            paddingVertical: 8,
+            paddingVertical: 12,
             backgroundColor: COLORS.background,
           },
         }}
