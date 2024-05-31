@@ -1,24 +1,18 @@
 import { useState } from "react";
-import {
-  NativeSyntheticEvent,
-  TextInputKeyPressEventData,
-  TextInputProps,
-} from "react-native";
+import { TextInputProps } from "react-native";
 import { NativeViewGestureHandlerProps } from "react-native-gesture-handler";
 
 export default function useSearchInput() {
   const [value, setValue] = useState("");
 
-  const handleSearch = (
-    e: NativeSyntheticEvent<TextInputKeyPressEventData>
-  ) => {
-    // console.log(e);
+  const handleSearch = () => {
+    console.log(value);
   };
 
   const inputProps: TextInputProps & NativeViewGestureHandlerProps = {
     value: value,
     onChangeText: setValue,
-    onKeyPress: handleSearch,
+    onSubmitEditing: handleSearch,
   };
 
   return inputProps;
