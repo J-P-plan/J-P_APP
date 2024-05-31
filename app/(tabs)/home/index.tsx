@@ -4,7 +4,7 @@ import useSearchInput from "@/hooks/common/useSearchInput";
 import HomeSection from "@/components/ui/home/HomeSection";
 import SearchIcon from "@/assets/icons/search.svg";
 import MESSAGE from "@/message/common";
-import COLORS from "@/constants/colors";
+import COLOR from "@/constants/colors";
 
 export default function HomeScreen() {
   const textInputProps = useSearchInput();
@@ -18,7 +18,7 @@ export default function HomeScreen() {
             tw="ml-[8px]"
             keyboardType="default"
             placeholder={MESSAGE.searchPlaceholder}
-            placeholderTextColor={COLORS.gray[300]}
+            placeholderTextColor={COLOR.gray[300]}
             {...textInputProps}
           />
         </View>

@@ -4,14 +4,14 @@ import SearchIcon from "@/assets/icons/tabs/search.svg";
 import PlanIcon from "@/assets/icons/tabs/plan.svg";
 import TravelReviewIcon from "@/assets/icons/tabs/travelReview.svg";
 import MypageIcon from "@/assets/icons/tabs/mypage.svg";
-import COLORS from "@/constants/colors";
+import COLOR from "@/constants/colors";
 
 export default function TabsLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: COLORS.primary.DEFAULT,
-        tabBarInactiveTintColor: COLORS.gray[600],
+        tabBarActiveTintColor: COLOR.primary.DEFAULT,
+        tabBarInactiveTintColor: COLOR.gray[600],
         tabBarStyle: {
           position: "absolute",
           bottom: 0,
@@ -20,7 +20,7 @@ export default function TabsLayout() {
           height: 80,
           paddingHorizontal: 10,
           paddingVertical: 0,
-          backgroundColor: COLORS.background,
+          backgroundColor: COLOR.background,
         },
       }}
     >
