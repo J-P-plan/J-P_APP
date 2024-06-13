@@ -23,22 +23,6 @@ export async function GET(request: Request) {
   return Response.json(data);
 }
 
-// export interface ReviewsData {
-//   id: number;
-//   subject: string;
-//   content: string;
-//   userCompactResDto: UserCompactResDto;
-//   commentCnt: number;
-//   star: number;
-//   placeId: string;
-// }
-
-// interface UserCompactResDto {
-//   id: number;
-//   nickname: string;
-//   picture: string;
-// }
-
 const mockData = {
   pageInfo: {
     page: 1,
@@ -58,8 +42,8 @@ const mockData = {
         nickname: "yeeso",
         picture: "",
       },
-      commentCnt: 12,
-      star: 4.5,
+      commentCnt: 21,
+      star: 4.8,
       placeId: "ChIJX7zzpqekczURlIbIAK4ltrs",
     },
     {
@@ -72,8 +56,8 @@ const mockData = {
         nickname: "은지",
         picture: "",
       },
-      commentCnt: 8,
-      star: 4.8,
+      commentCnt: 10,
+      star: 4.9,
       placeId: "ChIJzZqMtnOifDURQ0_wKF2H2gg",
     },
     {

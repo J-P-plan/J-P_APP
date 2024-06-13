@@ -1,13 +1,16 @@
 import { Text, View, Image } from "react-native";
 import { Link } from "expo-router";
+import TagChip from "@/components/common/TagChip";
+import HeartIcon from "@/assets/icons/posts/heart.svg";
+import StarIcon from "@/assets/icons/posts/star.svg";
+import CommentIcon from "@/assets/icons/posts/comment.svg";
 import type { HomeSectionItemProps } from "@/types/home";
 import type { PlaceData } from "@/types/api/place";
 import type { ReviewsData } from "@/types/api/review";
-import StarIcon from "@/assets/icons/review/star.svg";
-import ReviewIcon from "@/assets/icons/review/review.svg";
+import type { TravelLogData } from "@/types/api/travelLog";
 
 interface ItemProps {
-  data: PlaceData | ReviewsData;
+  data: PlaceData | ReviewsData | TravelLogData;
 }
 
 export default function HomeSectionListItem({
@@ -22,7 +25,7 @@ export default function HomeSectionListItem({
     case "place-theme":
       return <PlaceItem data={data as PlaceData} type="theme" />;
     case "travel-log":
-      return;
+      return <TravelLogItem data={data as TravelLogData} />;
     case "review":
       return <ReviewItem data={data as ReviewsData} />;
   }
@@ -71,13 +74,41 @@ const CityItem = ({ data }: PlaceItemProps) => {
   );
 };
 
-// const TravelLogItem = ({ data }: ItemProps) => {
-//   return (
-//     <View>
-//       <Text>{data.name}</Text>
-//     </View>
-//   );
-// };
+interface TravelLogItemProps {
+  data: TravelLogData;
+}
+
+const TravelLogItem = ({ data }: TravelLogItemProps) => {
+  return (
+    <View tw="flex-row w-[343px] h-20 mb-3">
+      <View tw="w-[85px] h-full mr-2.5 rounded bg-gray-300"></View>
+      <View tw="flex-1 justify-between">
+        <View tw="flex-row">
+          {data.tags.map((tag) => (
+            <TagChip key={tag} text={tag} />
+          ))}
+        </View>
+        <View>
+          <Text numberOfLines={1} tw="font-bold text-sm">
+            {data.subject}
+          </Text>
+        </View>
+        <View tw="flex-row items-center justify-between">
+          <View tw="flex-row items-center">
+            <View tw="w-6 h-6 rounded-full bg-secondary-light"></View>
+            <Text tw="ml-2 text-xs">{data.userCompactResDto.nickname}</Text>
+          </View>
+          <View tw="flex-row">
+            <HeartIcon />
+            <Text tw="ml-[3px] mr-2 text-xs">{data.like}</Text>
+            <CommentIcon />
+            <Text tw="ml-[3px] text-xs">{data.commentCnt}</Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  );
+};
 
 interface ReviewItemProps {
   data: ReviewsData;
@@ -86,7 +117,7 @@ interface ReviewItemProps {
 const ReviewItem = ({ data }: ReviewItemProps) => {
   return (
     <View tw="flex-row w-[343px] h-20 mb-3">
-      <View tw="w-[84px] h-full mr-2.5 rounded bg-gray-300"></View>
+      <View tw="w-[85px] h-full mr-2.5 rounded bg-gray-300"></View>
       <View tw="flex-1 justify-between">
         <View>
           <Text numberOfLines={1} tw="font-bold text-sm">
@@ -104,7 +135,7 @@ const ReviewItem = ({ data }: ReviewItemProps) => {
           <View tw="flex-row">
             <StarIcon />
             <Text tw="ml-[3px] mr-2 text-xs">{data.star}</Text>
-            <ReviewIcon />
+            <CommentIcon />
             <Text tw="ml-[3px] text-xs">{data.commentCnt}</Text>
           </View>
         </View>
