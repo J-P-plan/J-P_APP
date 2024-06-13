@@ -1,24 +1,21 @@
 import { useState } from "react";
-import {
-  NativeSyntheticEvent,
-  TextInputKeyPressEventData,
-  TextInputProps,
-} from "react-native";
+import { TextInputProps } from "react-native";
 import { NativeViewGestureHandlerProps } from "react-native-gesture-handler";
+import { useRouter } from "expo-router";
 
 export default function useSearchInput() {
   const [value, setValue] = useState("");
+  const { push } = useRouter();
 
-  const handleSearch = (
-    e: NativeSyntheticEvent<TextInputKeyPressEventData>
-  ) => {
-    // console.log(e);
+  const handleSearch = () => {
+    console.log(value);
+    push("/(tabs)/search");
   };
 
   const inputProps: TextInputProps & NativeViewGestureHandlerProps = {
     value: value,
     onChangeText: setValue,
-    onKeyPress: handleSearch,
+    onSubmitEditing: handleSearch,
   };
 
   return inputProps;
