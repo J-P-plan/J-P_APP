@@ -1,7 +1,7 @@
-import { useRouter } from "expo-router";
 import { useState } from "react";
 import { TextInputProps } from "react-native";
 import { NativeViewGestureHandlerProps } from "react-native-gesture-handler";
+import { useRouter } from "expo-router";
 
 export default function useSearchInput() {
   const [value, setValue] = useState("");
