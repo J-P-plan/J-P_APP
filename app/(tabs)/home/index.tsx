@@ -5,7 +5,7 @@ import HomeSection from "@/components/ui/home/HomeSection";
 export default function HomeScreen() {
   return (
     <SafeAreaView tw="flex-1 mb-20">
-      <ScrollView tw="px-5 pt-2">
+      <ScrollView tw="px-4 pt-2">
         <SearchBar />
         <HomeSection sectionId="place-trending" />
         <HomeSection sectionId="city-trending" />
