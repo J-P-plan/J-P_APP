@@ -1,17 +1,18 @@
-import { View, Text, SafeAreaView, ScrollView } from "react-native";
-import { Link } from "expo-router";
+import { SafeAreaView, ScrollView, View } from "react-native";
+import { usePlaceListData } from "@/hooks/query/placeData";
+import PlaceCard from "@/components/ui/home/PlaceCard";
 
-export default function TrendingPlaceScreen() {
+export default function PlaceTrendingScreen() {
+  const { data: placeList } = usePlaceListData("place-trending");
+  
   return (
-    <SafeAreaView tw="flex-1">
-      <ScrollView>
-        <View>
-          <Text>TrendingPlace</Text>
-        </View>
-        <View>
-          <Link href={"/(tabs)/home/(detail)/place/1"}>
-            <Text>Place Detail</Text>
-          </Link>
+    <SafeAreaView tw="flex-1 mb-20">
+      <ScrollView tw="pt-2">
+        <View tw="flex-row flex-wrap justify-between w-[343px] mx-auto mb-4">
+          {placeList &&
+            placeList.data.map((place) => (
+              <PlaceCard key={place.id} data={place} />
+            ))}
         </View>
       </ScrollView>
     </SafeAreaView>
