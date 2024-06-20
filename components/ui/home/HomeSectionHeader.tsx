@@ -5,7 +5,7 @@ import type { HomeSectionItemProps } from "@/types/home";
 
 export default function HomeSectionHeader({ id }: HomeSectionItemProps) {
   return (
-    <View tw="flex-row items-center justify-between w-[343px] mb-3">
+    <View tw="flex-row items-center justify-between w-[343px] mx-auto  mb-3">
       <Text tw="font-bold text-xl text-gray-900">
         {HOME_MESSAGE.homeSectionTitle[id]}
       </Text>
