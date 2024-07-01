@@ -1,12 +1,19 @@
 import { StyleSheet } from "react-native";
 import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 
-export default function Map() {
+interface Props {
+  isRounded?: boolean;
+}
+
+export default function Map({ isRounded = false }: Props) {
   return (
     <>
       <MapView
         // provider={PROVIDER_GOOGLE}
-        style={{ ...StyleSheet.absoluteFillObject, borderRadius: 16 }}
+        style={{
+          ...StyleSheet.absoluteFillObject,
+          borderRadius: isRounded ? 16 : 0,
+        }}
         region={{
           latitude: 37.5519,
           longitude: 126.9918,
