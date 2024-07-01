@@ -1,6 +1,6 @@
 import { SafeAreaView, ScrollView, View } from "react-native";
 import { usePlaceListData } from "@/hooks/query/placeData";
-import CityCard from "@/components/ui/home/CityCard";
+import CityCard from "@/components/ui/home/list/CityCard";
 
 export default function CityTrendingScreen() {
   const { data: placeList } = usePlaceListData("city-trending");

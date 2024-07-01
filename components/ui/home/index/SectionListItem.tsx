@@ -1,13 +1,13 @@
 import { Text, View, Image } from "react-native";
 import { Link } from "expo-router";
 import TagChip from "@/components/common/TagChip";
+import LikeCount from "@/components/common/LikeCount";
+import CommentCount from "@/components/common/CommentCount";
+import StarRating from "@/components/common/StarRating";
 import type { HomeSectionItemProps } from "@/types/home";
 import type { PlaceData } from "@/types/api/place";
 import type { ReviewsData } from "@/types/api/review";
 import type { TravelLogData } from "@/types/api/travelLog";
-import LikeCount from "@/components/ui/LikeCount";
-import CommentCount from "@/components/ui/CommentCount";
-import StarRating from "@/components/ui/StarRating";
 
 interface ItemProps {
   data: PlaceData | ReviewsData | TravelLogData;

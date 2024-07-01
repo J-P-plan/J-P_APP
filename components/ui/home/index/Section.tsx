@@ -1,6 +1,6 @@
 import { View } from "react-native";
-import HomeSectionHeader from "./HomeSectionHeader";
-import HomeSectionList from "./HomeSectionList";
+import HomeSectionHeader from "@/components/ui/home/index/SectionHeader";
+import HomeSectionList from "@/components/ui/home/index/SectionList";
 import type { HomeSectionId } from "@/types/home";
 
 interface Props {
