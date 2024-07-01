@@ -1,13 +1,13 @@
 import { Text, View, Image } from "react-native";
 import { Link } from "expo-router";
 import TagChip from "@/components/common/TagChip";
-import HeartIcon from "@/assets/icons/posts/heart.svg";
-import StarIcon from "@/assets/icons/posts/star.svg";
-import CommentIcon from "@/assets/icons/posts/comment.svg";
 import type { HomeSectionItemProps } from "@/types/home";
 import type { PlaceData } from "@/types/api/place";
 import type { ReviewsData } from "@/types/api/review";
 import type { TravelLogData } from "@/types/api/travelLog";
+import LikeCount from "@/components/ui/LikeCount";
+import CommentCount from "@/components/ui/CommentCount";
+import StarRating from "@/components/ui/StarRating";
 
 interface ItemProps {
   data: PlaceData | ReviewsData | TravelLogData;
@@ -98,11 +98,13 @@ const TravelLogItem = ({ data }: TravelLogItemProps) => {
             <View tw="w-6 h-6 rounded-full bg-secondary-light"></View>
             <Text tw="ml-2 text-xs">{data.userCompactResDto.nickname}</Text>
           </View>
-          <View tw="flex-row">
-            <HeartIcon />
-            <Text tw="ml-[3px] mr-2 text-xs">{data.like}</Text>
-            <CommentIcon />
-            <Text tw="ml-[3px] text-xs">{data.commentCnt}</Text>
+          <View tw="space-x-2 flex-row">
+            <View tw="flex-row">
+              <LikeCount count={data.like} textColor="text-gray-300" />
+            </View>
+            <View tw="flex-row">
+              <CommentCount count={data.commentCnt} textColor="text-gray-300" />
+            </View>
           </View>
         </View>
       </View>
@@ -132,11 +134,13 @@ const ReviewItem = ({ data }: ReviewItemProps) => {
             <View tw="w-6 h-6 rounded-full bg-secondary-light"></View>
             <Text tw="ml-2 text-xs">{data.userCompactResDto.nickname}</Text>
           </View>
-          <View tw="flex-row">
-            <StarIcon />
-            <Text tw="ml-[3px] mr-2 text-xs">{data.star}</Text>
-            <CommentIcon />
-            <Text tw="ml-[3px] text-xs">{data.commentCnt}</Text>
+          <View tw="space-x-2 flex-row">
+            <View tw="flex-row">
+              <StarRating rating={data.star} textColor="text-gray-300" />
+            </View>
+            <View tw="flex-row">
+              <CommentCount count={data.commentCnt} textColor="text-gray-300" />
+            </View>
           </View>
         </View>
       </View>

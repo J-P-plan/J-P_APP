@@ -2,6 +2,7 @@ import { Stack } from "expo-router";
 import HomeHeader from "@/components/headers/HomeHeader";
 import HOME_MESSAGE from "@/message/home";
 import COLOR from "@/constants/colors";
+import { headerContent } from "@/components/headers/HomeHeaderContent";
 
 export default function HomeStacksLayout() {
   return (
@@ -74,7 +75,10 @@ export default function HomeStacksLayout() {
       <Stack.Screen
         name="(detail)/city/[id]"
         options={{
-          header: () => <HomeHeader type="detail" />,
+          title: "",
+          headerTransparent: true,
+          headerLeft: headerContent.detail.left,
+          headerRight: headerContent.detail.right,
           contentStyle: {
             backgroundColor: COLOR.background,
           },
@@ -83,7 +87,10 @@ export default function HomeStacksLayout() {
       <Stack.Screen
         name="(detail)/place/[id]"
         options={{
-          header: () => <HomeHeader type="detail" />,
+          title: "",
+          headerTransparent: true,
+          headerLeft: headerContent.detail.left,
+          headerRight: headerContent.detail.right,
           contentStyle: {
             backgroundColor: COLOR.background,
           },
