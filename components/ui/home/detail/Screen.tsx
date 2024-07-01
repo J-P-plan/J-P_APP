@@ -3,6 +3,7 @@ import { ScrollView, View, Text } from "react-native";
 import PagerView from "react-native-pager-view";
 import { Stack } from "expo-router";
 import { cn } from "@/lib/util";
+import Map from "@/components/common/Map";
 import TagChip from "@/components/common/TagChip";
 import VerticalSeparator from "@/components/common/Separator";
 import StarRating from "@/components/common/StarRating";
@@ -96,7 +97,9 @@ export default function HomeDetailScreen({ data, type = "place" }: Props) {
                 {data.formattedAddress}
               </Text>
             </View>
-            <View tw="mt-3 flex-1 h-[146px] rounded bg-secondary-light"></View>
+            <View tw="mt-3 flex-1 h-[146px] rounded bg-secondary-light">
+              <Map />
+            </View>
           </View>
         )}
         <View tw="w-[343px] mx-auto">
