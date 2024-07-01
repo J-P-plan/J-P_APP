@@ -1,6 +1,6 @@
 import { View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import HomeSectionListItem from "./HomeSectionListItem";
+import HomeSectionListItem from "@/components/ui/home/index/SectionListItem";
 import { useSectionData } from "@/hooks/query/sectionData";
 import type { HomeSectionItemProps } from "@/types/home";
 
