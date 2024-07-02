@@ -1,10 +1,10 @@
 import { Text, View } from "react-native";
 import StarRating from "@/components/common/StarRating";
 import TagChip from "@/components/common/TagChip";
-import type { PlaceData } from "@/types/api/place";
+import type { NearByPlaceData } from "@/types/api/nearby";
 
 interface Props {
-  data: PlaceData;
+  data: NearByPlaceData;
 }
 
 export default function RecommendCard({ data }: Props) {
@@ -15,12 +15,12 @@ export default function RecommendCard({ data }: Props) {
         <View tw="flex-row items-center justify-between">
           <TagChip text="주변 여행지" padding="px-2.5" withoutHashtag />
           <View tw="flex-row items-center">
-            <StarRating rating={4.8} />
+            <StarRating rating={data.rating} />
           </View>
         </View>
         <Text tw="font-bold text-base text-gray-900">{data.name}</Text>
         <View tw="flex-row items-center justify-between">
-          <Text tw="font-normal text-xs text-gray-700">{"address"}</Text>
+          <Text tw="font-normal text-xs text-gray-700">{data.vicinity}</Text>
           <Text tw="font-normal text-xs text-gray-300">{"주소 보기"}</Text>
         </View>
       </View>
