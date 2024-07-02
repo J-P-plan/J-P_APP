@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { ScrollView, View, Text } from "react-native";
 import PagerView from "react-native-pager-view";
-import { Stack } from "expo-router";
+import { Link, Stack } from "expo-router";
 import { cn } from "@/lib/util";
 import Map from "@/components/common/Map";
 import TagChip from "@/components/common/TagChip";
@@ -98,7 +98,7 @@ export default function HomeDetailScreen({ data, type = "place" }: Props) {
               </Text>
             </View>
             <View tw="mt-3 flex-1 h-[146px] rounded bg-secondary-light">
-              <Map />
+              <Map isRounded />
             </View>
           </View>
         )}
@@ -110,9 +110,14 @@ export default function HomeDetailScreen({ data, type = "place" }: Props) {
             <Text tw="ml-3 font-normal text-xs text-gray-700">
               {"지도로 보기"}
             </Text>
-            <Text tw="flex-1 text-right font-normal text-xs text-gray-300">
-              {"더보기"}
-            </Text>
+            <Link
+              tw="flex-1"
+              href={`/(tabs)/home/place-recommend?lat=${data.location.lat}&lng=${data.location.lng}`}
+            >
+              <Text tw="flex-1 text-right font-normal text-xs text-gray-300">
+                {"더보기"}
+              </Text>
+            </Link>
           </View>
           <View tw="space-y-2">
             {["섬진강 대나무숲길", "구례 꽃강", "화엄사"].map((place) => (
