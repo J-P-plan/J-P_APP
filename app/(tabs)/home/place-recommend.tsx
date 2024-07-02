@@ -1,11 +1,13 @@
 import { SafeAreaView, ScrollView, View } from "react-native";
-import { usePlaceListData } from "@/hooks/query/placeData";
+import { useLocalSearchParams } from "expo-router";
+import { useNearByListData } from "@/hooks/query/googlePlaceData";
 import Map from "@/components/common/Map";
 import BottomSheet from "@/components/common/BottomSheet";
 import RecommendCard from "@/components/ui/home/list/RecommendCard";
 
 export default function PlaceRecommendScreen() {
-  const { data: placeList } = usePlaceListData("place-trending");
+  const { lat, lng } = useLocalSearchParams<{ lat: string; lng: string }>();
+  const { data: placeList } = useNearByListData(lat, lng);
 
   return (
     <SafeAreaView tw="flex-1 mb-20">
@@ -14,8 +16,8 @@ export default function PlaceRecommendScreen() {
         <ScrollView tw="mb-56">
           <View tw="w-[343px] mx-auto">
             {placeList &&
-              placeList.data.map((place) => (
-                <RecommendCard key={place.id} data={place} />
+              placeList.results.map((place) => (
+                <RecommendCard key={place.placeId} data={place} />
               ))}
           </View>
         </ScrollView>

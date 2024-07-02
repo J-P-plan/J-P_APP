@@ -110,7 +110,10 @@ export default function HomeDetailScreen({ data, type = "place" }: Props) {
             <Text tw="ml-3 font-normal text-xs text-gray-700">
               {"지도로 보기"}
             </Text>
-            <Link tw="flex-1" href={"/(tabs)/home/place-recommend"}>
+            <Link
+              tw="flex-1"
+              href={`/(tabs)/home/place-recommend?lat=${data.location.lat}&lng=${data.location.lng}`}
+            >
               <Text tw="flex-1 text-right font-normal text-xs text-gray-300">
                 {"더보기"}
               </Text>
