@@ -1,9 +1,9 @@
-import { View, Text, TouchableOpacity } from "react-native";
-import { Link } from "expo-router";
+import { View, Text } from "react-native";
 import VerticalSeparator from "@/components/common/Separator";
 import StarRating from "@/components/common/StarRating";
 import PlusIcon from "@/assets/icons/common/plus.svg";
 import type { Location } from "@/types/api/placeDetail";
+import DetailScreenSectionTitle from "@/components/ui/home/detail/molecules/shared/Title";
 
 interface Props {
   location: Location;
@@ -12,19 +12,10 @@ interface Props {
 export default function DetailScreenNearByPlaces({ location }: Props) {
   return (
     <View tw="w-[343px] mx-auto">
-      <View tw="flex-row items-center justify-between mt-6 mb-3">
-        <Text tw="font-bold text-xl text-gray-900">{"주변 여행지 추천"}</Text>
-        <Link
-          href={`/(tabs)/home/place-recommend?lat=${location.lat}&lng=${location.lng}`}
-          asChild
-        >
-          <TouchableOpacity activeOpacity={1}>
-            <Text tw="text-right font-normal text-xs text-gray-300">
-              {"더보기"}
-            </Text>
-          </TouchableOpacity>
-        </Link>
-      </View>
+      <DetailScreenSectionTitle
+        title="주변 여행지 추천"
+        link={`/(tabs)/home/place-recommend?lat=${location.lat}&lng=${location.lng}`}
+      />
       <View tw="space-y-2">
         {["섬진강 대나무숲길", "구례 꽃강", "화엄사"].map((place) => (
           <View

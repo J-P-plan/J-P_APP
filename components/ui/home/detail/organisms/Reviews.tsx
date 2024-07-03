@@ -14,12 +14,14 @@ interface Props {
 
 export default function DetailScreenReviews({ id }: Props) {
   return (
-    <ContentWrapper>
-      <DetailScreenSectionTitle
-        title="리뷰"
-        icon={<EditIcon tw="ml-1.5 w-[18px] h-[18px] text-gray-900" />}
-        link="/"
-      />
+    <>
+      <ContentWrapper>
+        <DetailScreenSectionTitle
+          title="리뷰"
+          iconRight={<EditIcon tw="ml-1.5 w-[18px] h-[18px] text-gray-900" />}
+          link="/"
+        />
+      </ContentWrapper>
       <HorizontalScrollView>
         {Array.from({ length: 5 }).map((review, i) => (
           <View
@@ -57,6 +59,6 @@ export default function DetailScreenReviews({ id }: Props) {
           </View>
         ))}
       </HorizontalScrollView>
-    </ContentWrapper>
+    </>
   );
 }
