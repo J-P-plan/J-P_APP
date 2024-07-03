@@ -1,9 +1,10 @@
 import { View, Text } from "react-native";
+import ContentWrapper from "@/components/common/ContentWrapper";
 import VerticalSeparator from "@/components/common/Separator";
 import StarRating from "@/components/common/StarRating";
+import DetailScreenSectionTitle from "@/components/ui/home/detail/molecules/shared/Title";
 import PlusIcon from "@/assets/icons/common/plus.svg";
 import type { Location } from "@/types/api/placeDetail";
-import DetailScreenSectionTitle from "@/components/ui/home/detail/molecules/shared/Title";
 
 interface Props {
   location: Location;
@@ -11,7 +12,7 @@ interface Props {
 
 export default function DetailScreenNearByPlaces({ location }: Props) {
   return (
-    <View tw="w-[343px] mx-auto">
+    <ContentWrapper>
       <DetailScreenSectionTitle
         title="주변 여행지 추천"
         link={`/(tabs)/home/place-recommend?lat=${location.lat}&lng=${location.lng}`}
@@ -42,6 +43,6 @@ export default function DetailScreenNearByPlaces({ location }: Props) {
           </View>
         ))}
       </View>
-    </View>
+    </ContentWrapper>
   );
 }
