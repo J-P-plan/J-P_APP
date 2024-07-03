@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ScrollView, View, Text } from "react-native";
+import { ScrollView, View, Text, TouchableOpacity } from "react-native";
 import PagerView from "react-native-pager-view";
 import { Link, Stack } from "expo-router";
 import { cn } from "@/lib/util";
@@ -104,20 +104,31 @@ export default function HomeDetailScreen({ data, type = "place" }: Props) {
           </View>
         )}
         <View tw="w-[343px] mx-auto">
-          <View tw="flex-row items-center mt-6 mb-3">
-            <Text tw="font-bold text-xl text-gray-900">
-              {"주변 여행지 추천"}
-            </Text>
-            <Text tw="ml-3 font-normal text-xs text-gray-700">
-              {"지도로 보기"}
-            </Text>
-            <Link
-              tw="flex-1"
-              href={`/(tabs)/home/place-recommend?lat=${data.location.lat}&lng=${data.location.lng}`}
-            >
-              <Text tw="flex-1 text-right font-normal text-xs text-gray-300">
-                {"더보기"}
+          <View tw="flex-row items-center justify-between mt-6 mb-3">
+            <View tw="flex-row items-center">
+              <Text tw="font-bold text-xl text-gray-900">
+                {"주변 여행지 추천"}
               </Text>
+              <Link
+                href={`/(tabs)/home/place-recommend?lat=${data.location.lat}&lng=${data.location.lng}`}
+                asChild
+              >
+                <TouchableOpacity activeOpacity={1}>
+                  <Text tw="ml-3 font-normal text-xs text-gray-700">
+                    {"지도로 보기"}
+                  </Text>
+                </TouchableOpacity>
+              </Link>
+            </View>
+            <Link
+              href={`/(tabs)/home/place-recommend?lat=${data.location.lat}&lng=${data.location.lng}`}
+              asChild
+            >
+              <TouchableOpacity activeOpacity={1}>
+                <Text tw="text-right font-normal text-xs text-gray-300">
+                  {"더보기"}
+                </Text>
+              </TouchableOpacity>
             </Link>
           </View>
           <View tw="space-y-2">
@@ -147,19 +158,25 @@ export default function HomeDetailScreen({ data, type = "place" }: Props) {
             ))}
           </View>
         </View>
-        <View tw="">
-          <View tw="flex-row items-center w-[343px] mx-auto mt-6 mb-3">
-            <Text tw="font-bold text-xl text-gray-900">{"리뷰"}</Text>
-            <EditIcon tw="ml-1.5 w-[18px] h-[18px] text-gray-900" />
-            <Text tw="flex-1 text-right font-normal text-xs text-gray-300">
-              {"더보기"}
-            </Text>
+        <View>
+          <View tw="flex-row items-center justify-between w-[343px] mx-auto mt-6 mb-3">
+            <View tw="flex-row items-center">
+              <Text tw="font-bold text-xl text-gray-900">{"리뷰"}</Text>
+              <EditIcon tw="ml-1.5 w-[18px] h-[18px] text-gray-900" />
+            </View>
+            <Link href={`/`} asChild>
+              <TouchableOpacity activeOpacity={1}>
+                <Text tw="text-right font-normal text-xs text-gray-300">
+                  {"더보기"}
+                </Text>
+              </TouchableOpacity>
+            </Link>
           </View>
-          <HorizontalScrollView tw="pl-5 space-x-2">
+          <HorizontalScrollView>
             {Array.from({ length: 5 }).map((review, i) => (
               <View
                 key={i}
-                tw="space-y-2 w-[271px] h-[134px] py-4 px-7 rounded border border-gray-200 bg-white"
+                tw="space-y-2 w-[271px] h-[134px] mr-2 py-4 px-7 rounded border border-gray-200 bg-white"
               >
                 <View tw="flex-row items-center justify-between">
                   <View tw="flex-row items-center">
