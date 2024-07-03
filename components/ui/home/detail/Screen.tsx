@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
-import { ScrollView, View, Text, TouchableOpacity } from "react-native";
+import { ScrollView, View, Text, TouchableOpacity, Image } from "react-native";
 import PagerView from "react-native-pager-view";
 import { Link, Stack } from "expo-router";
-import { cn } from "@/lib/util";
 import type { PlaceDetailData } from "@/types/api/placeDetail";
 import Map from "@/components/common/Map";
 import HorizontalScrollView from "@/components/common/HorizontalScrollView";
@@ -57,20 +56,19 @@ export default function HomeDetailScreen({ data, type = "place" }: Props) {
             orientation={"horizontal"}
             onPageSelected={(e) => setCarouselPage(e.nativeEvent.position)}
           >
-            {Array.from({ length: 3 }).map((item, i) => (
-              <View
+            {data.photoUrls.map((url, i) => (
+              <Image
                 key={i}
-                tw={cn(
-                  "relative w-full h-full",
-                  i === 1 ? "bg-secondary" : "bg-primary-light"
-                )}
-              ></View>
+                source={{ uri: url }}
+                alt={`사진 ${i}`}
+                tw="w-full h-full"
+              />
             ))}
           </PagerView>
-          <View tw="absolute bottom-[22px] right-[25px] items-center justify-center w-8 h-4 rounded-full bg-white/60">
-            <Text tw="font-normal text-[10px] text-gray-900">{`${
-              carouselPage + 1
-            } / 3`}</Text>
+          <View tw="absolute bottom-[22px] right-[25px] items-center justify-center py-0.5 px-1.5 rounded-full bg-white/60">
+            <Text tw="font-normal text-[10px] text-gray-900">
+              {`${carouselPage + 1} / ${data.photoUrls.length}`}
+            </Text>
           </View>
         </View>
         <View tw="w-[343px] mx-auto">
