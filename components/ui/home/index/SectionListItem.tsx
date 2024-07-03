@@ -38,7 +38,7 @@ interface PlaceItemProps {
 
 const PlaceItem = ({ data, type }: PlaceItemProps) => {
   return (
-    <Link href={`/(tabs)/home/(detail)/place/${data.placeId}`}>
+    <Link href={`/(tabs)/home/(detail)/place/${data.placeId}`} tw="mt-1">
       <View tw="mr-2">
         <View tw="w-[120px] h-[120px] rounded bg-gray-300">
           {type === "theme" && (
@@ -61,7 +61,7 @@ const PlaceItem = ({ data, type }: PlaceItemProps) => {
 
 const CityItem = ({ data }: PlaceItemProps) => {
   return (
-    <Link href={`/(tabs)/home/(detail)/city/${data.placeId}`}>
+    <Link href={`/(tabs)/home/(detail)/city/${data.placeId}`} tw="mt-1">
       <View tw="mr-2">
         <View tw="w-[120px] h-[120px] rounded bg-gray-300">
           <View tw="absolute bottom-[13px] right-[10.5px] items-center justify-center w-[45px] h-[25px] rounded-large bg-white/60">
