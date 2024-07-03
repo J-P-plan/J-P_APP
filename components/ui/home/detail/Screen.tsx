@@ -3,7 +3,9 @@ import { ScrollView, View, Text } from "react-native";
 import PagerView from "react-native-pager-view";
 import { Link, Stack } from "expo-router";
 import { cn } from "@/lib/util";
+import type { PlaceDetailData } from "@/types/api/placeDetail";
 import Map from "@/components/common/Map";
+import HorizontalScrollView from "@/components/common/HorizontalScrollView";
 import TagChip from "@/components/common/TagChip";
 import VerticalSeparator from "@/components/common/Separator";
 import StarRating from "@/components/common/StarRating";
@@ -13,7 +15,6 @@ import MarkerIcon from "@/assets/icons/common/marker.svg";
 import EditIcon from "@/assets/icons/common/edit.svg";
 import PlusIcon from "@/assets/icons/common/plus.svg";
 import PlusLargeIcon from "@/assets/icons/common/plusLarge.svg";
-import type { PlaceDetailData } from "@/types/api/placeDetail";
 
 interface Props {
   data: PlaceDetailData;
@@ -154,11 +155,7 @@ export default function HomeDetailScreen({ data, type = "place" }: Props) {
               {"더보기"}
             </Text>
           </View>
-          <ScrollView
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            tw="pl-5 space-x-2"
-          >
+          <HorizontalScrollView tw="pl-5 space-x-2">
             {Array.from({ length: 5 }).map((review, i) => (
               <View
                 key={i}
@@ -199,8 +196,7 @@ export default function HomeDetailScreen({ data, type = "place" }: Props) {
                 </View>
               </View>
             ))}
-            <View tw="w-10" />
-          </ScrollView>
+          </HorizontalScrollView>
         </View>
         <View tw="self-center flex-row mt-10 mb-5 py-3 px-4 rounded-full bg-primary shadow">
           <PlusLargeIcon tw="w-[18px] h-[18px] text-white" />
