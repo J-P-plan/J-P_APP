@@ -2,10 +2,7 @@ export async function GET(request: Request) {
   const placeId = new URL(request.url).searchParams.get("id");
 
   //   const response = await fetch(
-  //     `https://jandp-travel.kro.kr/place/details/${placeId}`
-  //   );
-  //   const response = await fetch(
-  //     `https://jandp-travel.kro.kr/place/details/ChIJucAviZkZbjURT-cf73qYS2I`
+  //     `${process.env.BACKEND_ENDPOINT}/place/details/${placeId}`
   //   );
 
   //   const res = await response.json();

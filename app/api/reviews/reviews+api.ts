@@ -13,7 +13,7 @@ export async function GET(request: Request) {
   Object.entries(params).forEach(([k, v]) => v && searchParams.append(k, v));
 
   //   const response = await fetch(
-  //     `https://jandp-travel.kro.kr/reviews?${searchParams}`
+  //   `${process.env.BACKEND_ENDPOINT}/reviews?${searchParams}`;
   //   );
 
   //   const res = await response.json();

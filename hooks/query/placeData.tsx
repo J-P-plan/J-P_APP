@@ -1,13 +1,14 @@
 import { type UseQueryResult, useQuery } from "@tanstack/react-query";
-import type { PlaceId, PlaceResponse } from "@/types/api/place";
+import { type PlaceResponse, PlaceType } from "@/types/api/place";
 import type { PlaceDetailData } from "@/types/api/placeDetail";
 
 export function usePlaceListData(
-  type: PlaceId
+  type: keyof typeof PlaceType
 ): UseQueryResult<PlaceResponse, Error> {
   return useQuery({
     queryKey: ["place-list", type],
-    queryFn: () => fetch(`/api/place?type=${type}`).then((res) => res.json()),
+    queryFn: () =>
+      fetch(`/api/place/place?placeType=${type}`).then((res) => res.json()),
     enabled: !!type,
   });
 }
@@ -17,7 +18,8 @@ export function usePlaceData(
 ): UseQueryResult<PlaceDetailData, Error> {
   return useQuery({
     queryKey: ["place", id],
-    queryFn: () => fetch(`/api/placeDetail?id=${id}`).then((res) => res.json()),
+    queryFn: () =>
+      fetch(`/api/place/placeDetail?id=${id}`).then((res) => res.json()),
     enabled: !!id,
   });
 }

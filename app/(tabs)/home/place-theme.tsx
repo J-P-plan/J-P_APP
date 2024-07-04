@@ -1,9 +1,10 @@
 import { SafeAreaView, ScrollView, View } from "react-native";
 import { usePlaceListData } from "@/hooks/query/placeData";
+import { PlaceType } from "@/types/api/place";
 import PlaceCard from "@/components/ui/home/list/PlaceCard";
 
 export default function PlaceThemeScreen() {
-  const { data: placeList } = usePlaceListData("place-theme");
+  const { data: placeList } = usePlaceListData(PlaceType.THEME);
 
   return (
     <SafeAreaView tw="flex-1 mb-20">

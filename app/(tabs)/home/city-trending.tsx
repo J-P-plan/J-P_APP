@@ -1,9 +1,10 @@
 import { SafeAreaView, ScrollView, View } from "react-native";
 import { usePlaceListData } from "@/hooks/query/placeData";
+import { PlaceType } from "@/types/api/place";
 import CityCard from "@/components/ui/home/list/CityCard";
 
 export default function CityTrendingScreen() {
-  const { data: placeList } = usePlaceListData("city-trending");
+  const { data: placeList } = usePlaceListData(PlaceType.CITY);
 
   return (
     <SafeAreaView tw="flex-1 mb-20">

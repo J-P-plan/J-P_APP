@@ -1,8 +1,8 @@
 import { Stack } from "expo-router";
 import HOME_MESSAGE from "@/message/home";
 import COLOR from "@/constants/colors";
-import HomeHeader from "@/components/headers/HomeHeader";
-import { headerContent } from "@/components/headers/HomeHeaderContent";
+import HomeHeader from "@/components/ui/headers/HomeHeader";
+import { headerContent } from "@/components/ui/headers/HomeHeaderContent";
 
 export default function HomeStacksLayout() {
   return (

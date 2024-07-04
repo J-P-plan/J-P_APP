@@ -1,5 +1,5 @@
-import { ReviewSort, ReviewSortType, ReviewResponse } from "@/types/api/review";
 import { type UseQueryResult, useQuery } from "@tanstack/react-query";
+import { ReviewSort, ReviewSortType, ReviewResponse } from "@/types/api/review";
 
 export function useReviewListData(): UseQueryResult<ReviewResponse, Error> {
   return useQuery({
@@ -18,7 +18,7 @@ export function usePlaceReviewListData(
     queryKey: ["review-list"],
     queryFn: () =>
       fetch(
-        `/api/reviews?placeId=${placeId}&elementCnt=${elementCnt}&sort=${sort}&page=${page}`
+        `/api/reviews/reviews?placeId=${placeId}&elementCnt=${elementCnt}&sort=${sort}&page=${page}`
       ).then((res) => res.json()),
     enabled: !!placeId,
   });

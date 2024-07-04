@@ -3,7 +3,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import {
   type HomeHeaderType,
   headerContent,
-} from "@/components/headers/HomeHeaderContent";
+} from "@/components/ui/headers/HomeHeaderContent";
 import { cn } from "@/lib/util";
 
 interface Props {
