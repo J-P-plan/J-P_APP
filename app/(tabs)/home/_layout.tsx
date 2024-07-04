@@ -1,7 +1,7 @@
 import { Stack } from "expo-router";
-import HomeHeader from "@/components/headers/HomeHeader";
 import HOME_MESSAGE from "@/message/home";
 import COLOR from "@/constants/colors";
+import HomeHeader from "@/components/headers/HomeHeader";
 import { headerContent } from "@/components/headers/HomeHeaderContent";
 
 export default function HomeStacksLayout() {
@@ -77,8 +77,8 @@ export default function HomeStacksLayout() {
         options={{
           title: "",
           headerTransparent: true,
-          headerLeft: headerContent.detail.left,
-          headerRight: headerContent.detail.right,
+          headerLeft: headerContent.detailTransparent.left,
+          headerRight: headerContent.detailTransparent.right,
           contentStyle: {
             backgroundColor: COLOR.background,
           },
@@ -89,8 +89,8 @@ export default function HomeStacksLayout() {
         options={{
           title: "",
           headerTransparent: true,
-          headerLeft: headerContent.detail.left,
-          headerRight: headerContent.detail.right,
+          headerLeft: headerContent.detailTransparent.left,
+          headerRight: headerContent.detailTransparent.right,
           contentStyle: {
             backgroundColor: COLOR.background,
           },

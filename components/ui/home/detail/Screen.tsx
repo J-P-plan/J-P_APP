@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { ScrollView } from "react-native";
 import { Stack } from "expo-router";
 import type { PlaceDetailData } from "@/types/api/placeDetail";
+import HomeHeader from "@/components/headers/HomeHeader";
 import DetailScreenImageCarousel from "@/components/ui/home/detail/organisms/Carousel";
 import DetailScreenSummary from "@/components/ui/home/detail/organisms/Summary";
 import DetailScreenInfo from "@/components/ui/home/detail/organisms/Info";
@@ -30,10 +31,12 @@ export default function HomeDetailScreen({ data, type = "place" }: Props) {
     <>
       <Stack.Screen
         options={{
-          title: `${headerOpacity ? data.name : ""}`,
-          headerStyle: {
-            backgroundColor: `rgba(250, 250, 250, ${headerOpacity})`,
-          },
+          header: () =>
+            headerOpacity ? (
+              <HomeHeader type="detail" title={data.name} />
+            ) : (
+              <HomeHeader type="detailTransparent" transparent />
+            ),
         }}
       />
       <ScrollView
