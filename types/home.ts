@@ -1,15 +1,8 @@
-export type HomeSectionId =
-  | "place-trending"
-  | "city-trending"
-  | "place-theme"
-  | "travel-log"
-  | "review";
+import { PlaceId } from "./api/place";
 
-export type HomeListScreenId =
-  | "place-trending"
-  | "city-trending"
-  | "place-theme"
-  | "place-recommend";
+export type HomeSectionId = PlaceId | "travel-log" | "review";
+
+export type HomeListScreenId = PlaceId | "place-recommend";
 
 export interface HomeSectionItemProps {
   id: HomeSectionId;
