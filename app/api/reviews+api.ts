@@ -1,10 +1,19 @@
-export async function GET(request: Request) {
-  const home = new URL(request.url).searchParams.get("home") ? true : false;
+import { ReviewSearchParams, ReviewSort } from "@/types/api/review";
 
-  //   const elementCnt = home ? 2 : 10;
+export async function GET(request: Request) {
+  const searchParams = new URLSearchParams();
+
+  const params: Record<ReviewSearchParams, any> = {
+    page: new URL(request.url).searchParams.get("page") || 1,
+    sort: new URL(request.url).searchParams.get("sort") || ReviewSort.HOT,
+    placeId: new URL(request.url).searchParams.get("placeId"),
+    elementCnt: new URL(request.url).searchParams.get("elementCnt"),
+  };
+
+  Object.entries(params).forEach(([k, v]) => v && searchParams.append(k, v));
 
   //   const response = await fetch(
-  //     `https://jandp-travel.kro.kr/reviews?page=1&sort=HOT&elementCnt=${elementCnt}`
+  //     `https://jandp-travel.kro.kr/reviews?${searchParams}`
   //   );
 
   //   const res = await response.json();
@@ -13,10 +22,10 @@ export async function GET(request: Request) {
 
   let data: any = mockData;
 
-  if (home) {
+  if (params.elementCnt) {
     data = {
       pageInfo: data.pageInfo,
-      data: data.data.slice(0, 2),
+      data: data.data.slice(0, params.elementCnt),
     };
   }
 

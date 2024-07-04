@@ -1,16 +1,22 @@
 import { View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import {
-  type Type,
+  type HomeHeaderType,
   headerContent,
 } from "@/components/headers/HomeHeaderContent";
+import { cn } from "@/lib/util";
 
 interface Props {
-  type: Type;
+  type: HomeHeaderType;
   title?: string;
+  transparent?: boolean;
 }
 
-export default function HomeHeader({ type, title = "" }: Props) {
+export default function HomeHeader({
+  type,
+  title = "",
+  transparent = false,
+}: Props) {
   const paddingTop = useSafeAreaInsets().top;
   const height = paddingTop + 60;
   const HeaderContent = headerContent[type];
@@ -18,7 +24,10 @@ export default function HomeHeader({ type, title = "" }: Props) {
   return (
     <View
       style={{ paddingTop, height }}
-      tw="flex-row items-center justify-between px-4 bg-background"
+      tw={cn(
+        "flex-row items-center justify-between px-4",
+        transparent ? "" : "bg-background"
+      )}
     >
       <HeaderContent.left />
       <HeaderContent.center title={title} />
