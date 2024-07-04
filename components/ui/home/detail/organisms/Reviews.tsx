@@ -1,3 +1,4 @@
+import { usePlaceReviewListData } from "@/hooks/query/reviewData";
 import ContentWrapper from "@/components/common/ContentWrapper";
 import HorizontalScrollView from "@/components/common/HorizontalScrollView";
 import DetailScreenSectionTitle from "@/components/ui/home/detail/molecules/shared/Title";
@@ -9,6 +10,8 @@ interface Props {
 }
 
 export default function DetailScreenReviews({ id }: Props) {
+  const { data: reviewList } = usePlaceReviewListData(id, 5);
+
   return (
     <>
       <ContentWrapper>
@@ -19,9 +22,10 @@ export default function DetailScreenReviews({ id }: Props) {
         />
       </ContentWrapper>
       <HorizontalScrollView>
-        {Array.from({ length: 5 }).map((review, i) => (
-          <ReviewCard key={i} review={{}} />
-        ))}
+        {reviewList &&
+          reviewList.data.map((review) => (
+            <ReviewCard key={review.id} review={review} />
+          ))}
       </HorizontalScrollView>
     </>
   );
