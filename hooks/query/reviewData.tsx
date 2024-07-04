@@ -18,7 +18,7 @@ export function usePlaceReviewListData(
     queryKey: ["review-list"],
     queryFn: () =>
       fetch(
-        `/api/reviews?placeId=${placeId}&elementCnt=${elementCnt}&sort=${sort}&page=${page}`
+        `/api/reviews/reviews?placeId=${placeId}&elementCnt=${elementCnt}&sort=${sort}&page=${page}`
       ).then((res) => res.json()),
     enabled: !!placeId,
   });
