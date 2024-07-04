@@ -36,6 +36,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="search/index"
         options={{
+          headerShown: false,
           title: "검색",
           tabBarIcon: ({ color }) => <SearchIcon color={color} />,
           tabBarLabelStyle: { fontSize: 10 },
@@ -44,14 +45,16 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="plan/index"
         options={{
+          headerShown: false,
           title: "일정",
           tabBarIcon: ({ color }) => <PlanIcon color={color} />,
           tabBarLabelStyle: { fontSize: 10 },
         }}
       />
       <Tabs.Screen
-        name="(travelReview)"
+        name="travelReview"
         options={{
+          headerShown: false,
           title: "리뷰/여행기",
           tabBarIcon: ({ color }) => <TravelReviewIcon color={color} />,
           tabBarLabelStyle: { fontSize: 10 },
@@ -60,6 +63,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="mypage"
         options={{
+          headerShown: false,
           title: "마이페이지",
           tabBarIcon: ({ color }) => <MypageIcon color={color} />,
           tabBarLabelStyle: { fontSize: 10 },
