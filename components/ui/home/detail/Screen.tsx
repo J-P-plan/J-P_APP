@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { ScrollView } from "react-native";
 import { Stack } from "expo-router";
 import type { PlaceDetailData } from "@/types/api/placeDetail";
-import HomeHeader from "@/components/headers/HomeHeader";
+import HomeHeader from "@/components/ui/headers/HomeHeader";
 import DetailScreenImageCarousel from "@/components/ui/home/detail/organisms/Carousel";
 import DetailScreenSummary from "@/components/ui/home/detail/organisms/Summary";
 import DetailScreenInfo from "@/components/ui/home/detail/organisms/Info";
