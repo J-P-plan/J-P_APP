@@ -1,6 +1,6 @@
 export async function GET(request: Request) {
   const response = await fetch(
-    "https://jandp-travel.kro.kr/googleplace/details?placeId=ChIJ9SUiOHBOZjUR_YnH8Lbjzt0"
+    `${process.env.BACKEND_ENDPOINT}/googleplace/details?placeId=ChIJ9SUiOHBOZjUR_YnH8Lbjzt0`
   );
 
   const res = await response.json();

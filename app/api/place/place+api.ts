@@ -1,18 +1,14 @@
-import { isPlace } from "@/types/api/place";
-import { placeType } from "@/types/api/place";
+import { PlaceType } from "@/types/api/place";
 
 export async function GET(request: Request) {
-  const type = new URL(request.url).searchParams.get("type");
-  const home = new URL(request.url).searchParams.get("home") ? true : false;
-
-  if (!isPlace(type)) {
-    return;
-  }
-
-  //   const elementCnt = home ? 6 : 10;
+  const page = new URL(request.url).searchParams.get("page") || 1;
+  const placeType =
+    new URL(request.url).searchParams.get("placeType") ||
+    PlaceType.TRAVEL_PLACE;
+  const elementCnt = new URL(request.url).searchParams.get("elementCnt") || 10;
 
   //   const response = await fetch(
-  //     `https://jandp-travel.kro.kr/place/page?page=1&placeType=${placeType[type]}&elementCnt=${elementCnt}`
+  //     `${process.env.BACKEND_ENDPOINT}/place/page?page=${page}&placeType=${placeType}&elementCnt=${elementCnt}`
   //   );
 
   //   const res = await response.json();
@@ -21,18 +17,16 @@ export async function GET(request: Request) {
 
   let data;
 
-  if (type === "city-trending") {
+  if (placeType === PlaceType.CITY) {
     data = mockDataCity;
   } else {
     data = mockDataPlace;
   }
 
-  if (home) {
-    data = {
-      pageInfo: data.pageInfo,
-      data: data.data.slice(0, 6),
-    };
-  }
+  data = {
+    pageInfo: data.pageInfo,
+    data: data.data.slice(0, Number(elementCnt)),
+  };
 
   return Response.json(data);
 }

@@ -8,7 +8,7 @@ export async function GET(request: Request) {
   }
 
   const response = await fetch(
-    `https://jandp-travel.kro.kr/googleplace/nearby-search/page?lat=${lat}&lng=${lng}&radius=${radius}`
+    `${process.env.BACKEND_ENDPOINT}/googleplace/nearby-search/page?lat=${lat}&lng=${lng}&radius=${radius}`
   );
 
   const res = await response.json();
