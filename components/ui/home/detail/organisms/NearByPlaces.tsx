@@ -1,14 +1,17 @@
 import { View } from "react-native";
+import { useNearByListData } from "@/hooks/query/googlePlaceData";
+import type { Location } from "@/types/api/placeDetail";
 import ContentWrapper from "@/components/common/ContentWrapper";
 import DetailScreenSectionTitle from "@/components/ui/home/detail/molecules/shared/Title";
 import NearByPlaceCard from "@/components/ui/home/detail/molecules/NearByPlaceCard";
-import type { Location } from "@/types/api/placeDetail";
 
 interface Props {
   location: Location;
 }
 
 export default function DetailScreenNearByPlaces({ location }: Props) {
+  const { data: nearbyList } = useNearByListData(location.lat, location.lng);
+
   return (
     <ContentWrapper>
       <DetailScreenSectionTitle
@@ -16,9 +19,12 @@ export default function DetailScreenNearByPlaces({ location }: Props) {
         link={`/(tabs)/home/place-recommend?lat=${location.lat}&lng=${location.lng}`}
       />
       <View>
-        {["섬진강 대나무숲길", "구례 꽃강", "화엄사"].map((place) => (
-          <NearByPlaceCard key={place} place={place} />
-        ))}
+        {nearbyList &&
+          nearbyList.results
+            .slice(0, 3)
+            .map((place) => (
+              <NearByPlaceCard key={place.placeId} place={place} />
+            ))}
       </View>
     </ContentWrapper>
   );

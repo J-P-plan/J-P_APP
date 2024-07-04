@@ -1,9 +1,9 @@
-import { NearBySearchResponse } from "@/types/api/nearby";
 import { type UseQueryResult, useQuery } from "@tanstack/react-query";
+import type { NearBySearchResponse } from "@/types/api/nearby";
 
 export function useNearByListData(
-  lat: string | undefined,
-  lng: string | undefined
+  lat: string | number | undefined,
+  lng: string | number | undefined
 ): UseQueryResult<NearBySearchResponse> {
   return useQuery({
     queryKey: ["nearby-list", lat, lng],
