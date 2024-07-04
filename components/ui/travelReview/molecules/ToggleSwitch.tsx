@@ -1,5 +1,5 @@
 import { Pressable, Text, View } from "react-native";
-import { useRouter } from "expo-router";
+import { usePathname, useRouter } from "expo-router";
 import { cn } from "@/lib/util";
 
 type SwitchOptions = "review" | "travel-log";
@@ -9,12 +9,12 @@ const buttons: { name: string; value: SwitchOptions }[] = [
   { name: "여행기", value: "travel-log" },
 ];
 
-interface Props {
-  currentValue: SwitchOptions;
-}
-
-export default function ToggleSwitch({ currentValue }: Props) {
+export default function ToggleSwitch() {
   const { replace } = useRouter();
+  const pathnames = usePathname().split("/");
+  const currentPath = pathnames[pathnames.length - 1];
+  const currentValue: SwitchOptions =
+    currentPath === "travelReview" ? "review" : (currentPath as SwitchOptions);
 
   const handlePress = (newValue: SwitchOptions) => {
     if (newValue === currentValue) {
