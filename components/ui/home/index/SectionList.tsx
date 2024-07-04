@@ -1,6 +1,6 @@
 import { View } from "react-native";
 import { useSectionData } from "@/hooks/query/sectionData";
-import type { HomeSectionItemProps } from "@/types/home";
+import type { HomeSectionItemProps } from "@/types/screen/home";
 import HorizontalScrollView from "@/components/common/HorizontalScrollView";
 import HomeSectionListItem from "@/components/ui/home/index/SectionListItem";
 

@@ -2,7 +2,7 @@ import { type UseQueryResult, useQuery } from "@tanstack/react-query";
 import { type PlaceResponse, placeType } from "@/types/api/place";
 import type { ReviewResponse } from "@/types/api/review";
 import type { TravelLogResponse } from "@/types/api/travelLog";
-import type { HomeSectionId } from "@/types/home";
+import type { HomeSectionId } from "@/types/screen/home";
 
 export type SectionResponse =
   | PlaceResponse

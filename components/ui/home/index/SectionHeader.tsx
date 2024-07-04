@@ -1,7 +1,7 @@
 import { Text, TouchableOpacity, View } from "react-native";
 import { Link } from "expo-router";
 import HOME_MESSAGE from "@/message/home";
-import type { HomeSectionItemProps } from "@/types/home";
+import type { HomeSectionItemProps } from "@/types/screen/home";
 
 export default function HomeSectionHeader({ id }: HomeSectionItemProps) {
   return (

@@ -1,4 +1,4 @@
-import type { HomeListScreenId, HomeSectionId } from "@/types/home";
+import type { HomeListScreenId, HomeSectionId } from "@/types/screen/home";
 
 interface HomeMessage {
   homeSectionTitle: Record<HomeSectionId | "more", string>;

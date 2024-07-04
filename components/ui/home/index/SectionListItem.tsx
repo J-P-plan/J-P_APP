@@ -4,7 +4,7 @@ import TagChip from "@/components/common/TagChip";
 import LikeCount from "@/components/common/LikeCount";
 import CommentCount from "@/components/common/CommentCount";
 import StarRating from "@/components/common/StarRating";
-import type { HomeSectionItemProps } from "@/types/home";
+import type { HomeSectionItemProps } from "@/types/screen/home";
 import type { PlaceData } from "@/types/api/place";
 import type { ReviewData } from "@/types/api/review";
 import type { TravelLogData } from "@/types/api/travelLog";
