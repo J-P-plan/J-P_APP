@@ -1,5 +1,5 @@
-import { ReviewSort, ReviewSortType, ReviewResponse } from "@/types/api/review";
 import { type UseQueryResult, useQuery } from "@tanstack/react-query";
+import { ReviewSort, ReviewSortType, ReviewResponse } from "@/types/api/review";
 
 export function useReviewListData(): UseQueryResult<ReviewResponse, Error> {
   return useQuery({
