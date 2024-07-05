@@ -1,5 +1,4 @@
 import { Text, View, Pressable } from "react-native";
-import type { ReviewData } from "@/types/api/review";
 import ArticleSeparator from "@/components/ui/travelReview/atoms/ArticleSeparator";
 import UserProfile from "@/components/common/UserProfile";
 import StarRating from "@/components/common/StarRating";
@@ -14,7 +13,7 @@ const images = [
 ];
 
 interface Props {
-  article: ReviewData;
+  article: Object;
   last?: boolean;
 }
 
@@ -23,20 +22,17 @@ export default function ArticlePreview({ article, last }: Props) {
     <>
       <View tw="flex-1 mt-4" style={{ gap: 8 }}>
         <View tw="flex-row items-center justify-between">
-          <UserProfile
-            size="medium"
-            profileUrl={article.userCompactResDto.picture || undefined}
-            name={article.userCompactResDto.nickname}
-            createdAt="24.3.24"
-          />
-          <StarRating rating={article.star} />
+          <UserProfile size="medium" name="jandp" createdAt="24.3.24" />
+          <StarRating rating={4.9} />
         </View>
         <Pressable tw="py-5 px-[30px] rounded border border-gray-200 bg-white">
           <Text numberOfLines={1} tw="font-normal text-sm text-gray-900">
-            {article.subject}
+            {"오대산 선재길에서 산책하기"}
           </Text>
           <Text numberOfLines={2} tw="font-normal text-sm text-gray-900">
-            {article.content}
+            {
+              "자연의 힐링을 동시에 누릴 수 있는 최고의 장소였어요! 산책로따라 걸으며 힐링을 만끽했어요! 호젓한 숲길을 계속 걷다보면 저절로 기분이 상쾌해지고 가벼워져요"
+            }
           </Text>
           <Text tw="absolute top-3 right-[15px] font-normal text-xs text-gray-300">
             {"더보기"}
@@ -44,8 +40,8 @@ export default function ArticlePreview({ article, last }: Props) {
         </Pressable>
         {images && <ImageCarousel images={images} height={190} rounded />}
         <View tw="flex-row items-center" style={{ gap: 6 }}>
-          <LikeCount count={article.likeCnt} />
-          <CommentCount count={article.commentCnt} />
+          <LikeCount count={12} />
+          <CommentCount count={4} />
         </View>
       </View>
       {last ? <View tw="h-20" /> : <ArticleSeparator />}
