@@ -11,8 +11,8 @@ export default function SortChip({ text, selected, onPress }: Props) {
   return (
     <Pressable
       tw={cn(
-        "py-1.5 px-2.5 rounded-full border",
-        selected ? "border-gray-700 bg-white" : "border-gray-200 bg-transparent"
+        "mr-1.5 py-1.5 px-2.5 rounded-full border",
+        selected ? "border-gray-700" : "border-gray-200"
       )}
       onPress={onPress}
     >

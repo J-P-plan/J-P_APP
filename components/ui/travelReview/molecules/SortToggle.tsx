@@ -1,22 +1,20 @@
-import { useState } from "react";
 import { View } from "react-native";
+import type { Sort } from "@/types/screen/travelReview";
 import SortChip from "@/components/ui/travelReview/atoms/SortChip";
 
-type Sort = "NEW" | "HOT";
+interface Props {
+  sorts: { name: string; value: Sort }[];
+  currentSort: Sort;
+  handleSortChange: (value: Sort) => void;
+}
 
-export default function SortToggle() {
-  const [currentSort, setCurrentSort] = useState<Sort>("NEW");
-  const sorts: { name: string; value: Sort }[] = [
-    { name: "최신순", value: "NEW" },
-    { name: "인기순", value: "HOT" },
-  ];
-
-  const handleSortChange = (value: Sort) => {
-    setCurrentSort(value);
-  };
-
+export default function SortToggle({
+  sorts,
+  currentSort,
+  handleSortChange,
+}: Props) {
   return (
-    <View>
+    <View tw="flex-row">
       {sorts.map((sort) => (
         <SortChip
           key={sort.value}
