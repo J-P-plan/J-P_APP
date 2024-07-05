@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { SafeAreaView, ScrollView } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { ScrollView } from "react-native-gesture-handler";
 import type { Sort } from "@/types/screen/travelReview";
 import ContentWrapper from "@/components/common/ContentWrapper";
 import SortToggle from "@/components/ui/travelReview/molecules/SortToggle";
@@ -23,7 +24,7 @@ export default function TravelReviewIndexScreen({ type }: Props) {
   };
 
   return (
-    <SafeAreaView tw="flex-1 mb-20">
+    <SafeAreaView tw="flex-1 mb-10">
       <ScrollView tw="pt-14">
         <ContentWrapper>
           <SortToggle
