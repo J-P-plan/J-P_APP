@@ -10,7 +10,7 @@ const buttons: { name: string; value: SwitchOptions }[] = [
 ];
 
 export default function ToggleSwitch() {
-  const { replace } = useRouter();
+  const { navigate } = useRouter();
   const pathnames = usePathname().split("/");
   const currentPath = pathnames[pathnames.length - 1];
   const currentValue: SwitchOptions =
@@ -20,7 +20,7 @@ export default function ToggleSwitch() {
     if (newValue === currentValue) {
       return;
     } else {
-      replace(`/(tabs)/travelReview/${newValue}`);
+      navigate(`/travelReview/${newValue}`);
     }
   };
 
