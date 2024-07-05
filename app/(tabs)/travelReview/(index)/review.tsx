@@ -1,9 +1,5 @@
-import { View, Text } from "react-native";
+import TravelReviewIndexScreen from "@/components/ui/travelReview/IndexScreen";
 
 export default function ReviewScreen() {
-  return (
-    <View>
-      <Text>review</Text>
-    </View>
-  );
+  return <TravelReviewIndexScreen type="review" />;
 }
