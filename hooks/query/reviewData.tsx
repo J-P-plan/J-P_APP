@@ -2,8 +2,9 @@ import { type UseQueryResult, useQuery } from "@tanstack/react-query";
 import {
   ReviewSort,
   ReviewSortType,
-  ReviewResponse,
   TravelReviewType,
+  ReviewResponse,
+  ReviewListResponse,
 } from "@/types/api/review";
 
 export function useTravelReviewListData(
@@ -11,7 +12,7 @@ export function useTravelReviewListData(
   sort: ReviewSortType = ReviewSort.NEW,
   page: number = 1,
   elementCnt: number = 10
-): UseQueryResult<ReviewResponse, Error> {
+): UseQueryResult<ReviewListResponse, Error> {
   const query =
     type === "review"
       ? fetch(
@@ -33,7 +34,7 @@ export function usePlaceReviewListData(
   elementCnt: number = 10,
   sort: ReviewSortType = ReviewSort.NEW,
   page: number = 1
-): UseQueryResult<ReviewResponse, Error> {
+): UseQueryResult<ReviewListResponse, Error> {
   return useQuery({
     queryKey: ["place-review-list", placeId],
     queryFn: () =>
@@ -41,5 +42,16 @@ export function usePlaceReviewListData(
         `/api/reviews/reviews?placeId=${placeId}&elementCnt=${elementCnt}&sort=${sort}&page=${page}`
       ).then((res) => res.json()),
     enabled: !!placeId,
+  });
+}
+
+export function useReviewData(
+  id: string
+): UseQueryResult<ReviewResponse, Error> {
+  return useQuery({
+    queryKey: ["review", id],
+    queryFn: () =>
+      fetch(`/api/reviews/review?id=${id}`).then((res) => res.json()),
+    enabled: !!id,
   });
 }
