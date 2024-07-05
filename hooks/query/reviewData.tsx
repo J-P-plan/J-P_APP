@@ -15,10 +15,11 @@ export function useTravelReviewListData(
   const query =
     type === "review"
       ? fetch(
-          `/api/reviews?sort=${sort}&page=${page}&elementCnt=${elementCnt}`
+          `/api/reviews/reviews?sort=${sort}&page=${page}&elementCnt=${elementCnt}`
         ).then((res) => res.json())
-      : fetch( // need to change with travel log api (when it becomes available)
-          `/api/reviews?sort=${sort}&page=${page}&elementCnt=${elementCnt}`
+      : fetch(
+          // need to change with travel log api (when it becomes available)
+          `/api/reviews/reviews?sort=${sort}&page=${page}&elementCnt=${elementCnt}`
         ).then((res) => res.json());
 
   return useQuery({
