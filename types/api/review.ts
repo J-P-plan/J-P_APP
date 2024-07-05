@@ -13,7 +13,7 @@ export enum ReviewSort {
 
 export type ReviewSortType = keyof typeof ReviewSort;
 
-export interface ReviewResponse {
+export interface ReviewListResponse {
   pageInfo: PageInfo;
   data: ReviewData[];
 }
@@ -34,4 +34,31 @@ interface UserCompactResDto {
   id: number;
   nickname: string;
   picture: string | null;
+}
+
+export interface ReviewResponse {
+  id: number;
+  subject: string;
+  content: string;
+  userCompactResDto: UserCompactResDto;
+  placeId: string;
+  star: number;
+  viewCnt: number;
+  createdAt: string;
+  commentResDtoList: CommentResDtoList[];
+}
+
+interface CommentResDtoList {
+  id: number;
+  content: string;
+  userCompactResDto: UserCompactResDto;
+  createdAt: string;
+  replyList: ReplyList[];
+}
+
+interface ReplyList {
+  id: number;
+  content: string;
+  userCompactResDto: UserCompactResDto;
+  createdAt: string;
 }
