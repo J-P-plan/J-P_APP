@@ -1,10 +1,29 @@
 import { type UseQueryResult, useQuery } from "@tanstack/react-query";
-import { ReviewSort, ReviewSortType, ReviewResponse } from "@/types/api/review";
+import {
+  ReviewSort,
+  ReviewSortType,
+  ReviewResponse,
+  TravelReviewType,
+} from "@/types/api/review";
 
-export function useReviewListData(): UseQueryResult<ReviewResponse, Error> {
+export function useTravelReviewListData(
+  type: TravelReviewType,
+  sort: ReviewSortType = ReviewSort.NEW,
+  page: number = 1,
+  elementCnt: number = 10
+): UseQueryResult<ReviewResponse, Error> {
+  const query =
+    type === "review"
+      ? fetch(
+          `/api/reviews?sort=${sort}&page=${page}&elementCnt=${elementCnt}`
+        ).then((res) => res.json())
+      : fetch( // need to change with travel log api (when it becomes available)
+          `/api/reviews?sort=${sort}&page=${page}&elementCnt=${elementCnt}`
+        ).then((res) => res.json());
+
   return useQuery({
-    queryKey: ["review-list"],
-    queryFn: () => fetch(`/api/reviews`).then((res) => res.json()),
+    queryKey: ["travel-review-list", type, sort, page],
+    queryFn: () => query,
   });
 }
 
@@ -15,7 +34,7 @@ export function usePlaceReviewListData(
   page: number = 1
 ): UseQueryResult<ReviewResponse, Error> {
   return useQuery({
-    queryKey: ["review-list"],
+    queryKey: ["place-review-list", placeId],
     queryFn: () =>
       fetch(
         `/api/reviews/reviews?placeId=${placeId}&elementCnt=${elementCnt}&sort=${sort}&page=${page}`
