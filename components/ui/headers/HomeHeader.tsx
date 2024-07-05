@@ -1,10 +1,10 @@
 import { View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { cn } from "@/lib/util";
 import {
   type HomeHeaderType,
-  headerContent,
-} from "@/components/ui/headers/HomeHeaderContent";
-import { cn } from "@/lib/util";
+  HomeHeaderContent,
+} from "@/components/ui/headers/molecules/HomeHeaderContents";
 
 interface Props {
   type: HomeHeaderType;
@@ -19,7 +19,7 @@ export default function HomeHeader({
 }: Props) {
   const paddingTop = useSafeAreaInsets().top;
   const height = paddingTop + 60;
-  const HeaderContent = headerContent[type];
+  const HeaderContent = HomeHeaderContent[type];
 
   return (
     <View
