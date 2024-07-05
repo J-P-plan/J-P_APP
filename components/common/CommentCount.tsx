@@ -1,4 +1,4 @@
-import { Text } from "react-native";
+import { Text, View } from "react-native";
 import CommentIcon from "@/assets/icons/common/comment.svg";
 import { cn } from "@/lib/util";
 
@@ -12,9 +12,9 @@ export default function CommentCount({
   textColor = "text-gray-700",
 }: Props) {
   return (
-    <>
+    <View tw="flex-row items-center">
       <CommentIcon tw="w-4 h-4 text-gray-300" />
       <Text tw={cn("ml-[3px] font-normal text-xs", textColor)}>{count}</Text>
-    </>
+    </View>
   );
 }
