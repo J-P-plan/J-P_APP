@@ -1,14 +1,13 @@
-import { Slot } from "expo-router";
-import Header from "@/components/ui/headers/Header";
-import ToggleSwitch from "@/components/ui/travelReview/molecules/ToggleSwitch";
+import { Stack } from "expo-router";
+import COLORS from "@/constants/colors";
 
 export default function TravelReviewLayout() {
   return (
-    <>
-      <Header>
-        <ToggleSwitch />
-      </Header>
-      <Slot />
-    </>
+    <Stack
+      screenOptions={{
+        headerShown: false,
+        contentStyle: { backgroundColor: COLORS.background },
+      }}
+    />
   );
 }
