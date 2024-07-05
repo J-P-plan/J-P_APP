@@ -13,10 +13,11 @@ const images = [
 ];
 
 interface Props {
+  article: Object;
   last?: boolean;
 }
 
-export default function ArticlePreview({ last }: Props) {
+export default function ArticlePreview({ article, last }: Props) {
   return (
     <>
       <View tw="flex-1 mt-4" style={{ gap: 8 }}>
