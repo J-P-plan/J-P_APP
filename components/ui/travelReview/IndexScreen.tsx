@@ -1,25 +1,27 @@
 import { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ScrollView } from "react-native-gesture-handler";
-import type { Sort } from "@/types/screen/travelReview";
+import { useTravelReviewListData } from "@/hooks/query/reviewData";
+import { ReviewSort, type TravelReviewType } from "@/types/api/review";
+import type { SortOption } from "@/types/screen/travelReview";
 import ContentWrapper from "@/components/common/ContentWrapper";
 import SortToggle from "@/components/ui/travelReview/molecules/SortToggle";
 import IndexArticleList from "@/components/ui/travelReview/organisms/IndexArticleList";
 
-const sorts: { name: string; value: Sort }[] = [
-  { name: "최신순", value: "NEW" },
-  { name: "인기순", value: "HOT" },
+const sorts: { name: string; value: SortOption }[] = [
+  { name: "최신순", value: ReviewSort.NEW },
+  { name: "인기순", value: ReviewSort.HOT },
 ];
 
 interface Props {
-  type: "review" | "travel-log";
+  type: TravelReviewType;
 }
 
 export default function TravelReviewIndexScreen({ type }: Props) {
-  const [currentSort, setCurrentSort] = useState<Sort>("NEW");
-  const list = [{}, {}, {}];
+  const [currentSort, setCurrentSort] = useState<SortOption>(ReviewSort.NEW);
+  const { data: list } = useTravelReviewListData(type, currentSort);
 
-  const handleSortChange = (value: Sort) => {
+  const handleSortChange = (value: SortOption) => {
     setCurrentSort(value);
   };
 
@@ -32,7 +34,7 @@ export default function TravelReviewIndexScreen({ type }: Props) {
             currentSort={currentSort}
             handleSortChange={handleSortChange}
           />
-          {list && <IndexArticleList list={list} />}
+          {list && <IndexArticleList list={list.data} />}
         </ContentWrapper>
       </ScrollView>
     </SafeAreaView>

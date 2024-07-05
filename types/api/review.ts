@@ -1,4 +1,6 @@
-import type { PageInfo } from "./common";
+import type { PageInfo } from "@/types/api/common";
+
+export type TravelReviewType = "review" | "travel-log";
 
 export type ReviewSearchParams = "page" | "sort" | "placeId" | "elementCnt";
 
