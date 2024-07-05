@@ -16,7 +16,7 @@ interface Props {
 
 export default function TravelReviewIndexScreen({ type }: Props) {
   const [currentSort, setCurrentSort] = useState<Sort>("NEW");
-  const list = [{}];
+  const list = [{}, {}, {}];
 
   const handleSortChange = (value: Sort) => {
     setCurrentSort(value);
@@ -24,7 +24,7 @@ export default function TravelReviewIndexScreen({ type }: Props) {
 
   return (
     <SafeAreaView tw="flex-1 mb-20">
-      <ScrollView>
+      <ScrollView tw="pt-14">
         <ContentWrapper>
           <SortToggle
             sorts={sorts}

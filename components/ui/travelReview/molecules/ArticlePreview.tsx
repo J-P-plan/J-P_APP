@@ -44,7 +44,7 @@ export default function ArticlePreview({ article, last }: Props) {
           <CommentCount count={4} />
         </View>
       </View>
-      {last ? <View tw="h-6" /> : <ArticleSeparator />}
+      {last ? <View tw="h-20" /> : <ArticleSeparator />}
     </>
   );
 }

@@ -20,12 +20,12 @@ export default function ToggleSwitch() {
     if (newValue === currentValue) {
       return;
     } else {
-      navigate(`/travelReview/${newValue}`);
+      navigate(`/(tabs)/travelReview/(index)/${newValue}`);
     }
   };
 
   return (
-    <View tw="space-x-0.5 self-center flex-row py-1.5 px-2 rounded-full border border-gray-100 bg-white">
+    <View tw="space-x-0.5 self-center flex-row mt-1 py-1.5 px-2 rounded-full border border-gray-100 bg-white">
       {buttons.map((button) => (
         <Pressable
           key={button.value}
