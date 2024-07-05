@@ -3,7 +3,7 @@ import { ScrollView } from "react-native";
 import { Stack } from "expo-router";
 import type { PlaceDetailData } from "@/types/api/placeDetail";
 import HomeHeader from "@/components/ui/headers/HomeHeader";
-import DetailScreenImageCarousel from "@/components/ui/home/detail/organisms/Carousel";
+import ImageCarousel from "@/components/common/Carousel";
 import DetailScreenSummary from "@/components/ui/home/detail/organisms/Summary";
 import DetailScreenInfo from "@/components/ui/home/detail/organisms/Info";
 import DetailScreenNearByPlaces from "@/components/ui/home/detail/organisms/NearByPlaces";
@@ -44,7 +44,7 @@ export default function HomeDetailScreen({ data, type = "place" }: Props) {
         onScroll={(e) => setScrollY(e.nativeEvent.contentOffset.y)}
         scrollEventThrottle={10}
       >
-        <DetailScreenImageCarousel images={data.photoUrls} />
+        <ImageCarousel images={data.photoUrls} />
         <DetailScreenSummary
           name={data.name}
           tags={["벚꽃 명소", "산책코스", "아름다운 길", "나들이"]}

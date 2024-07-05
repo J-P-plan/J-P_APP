@@ -4,16 +4,22 @@ import PagerView from "react-native-pager-view";
 
 interface Props {
   images: string[];
+  height?: number;
+  rounded?: boolean;
 }
 
-export default function DetailScreenImageCarousel({ images }: Props) {
+export default function ImageCarousel({
+  images,
+  height = 280,
+  rounded = false,
+}: Props) {
   const [carouselPage, setCarouselPage] = useState<number>(0);
 
   return (
-    <View tw="relative flex-1 h-[250px]">
+    <View>
       <PagerView
         initialPage={0}
-        tw="flex-1 h-[250px]"
+        style={{ height }}
         scrollEnabled
         orientation={"horizontal"}
         onPageSelected={(e) => setCarouselPage(e.nativeEvent.position)}
@@ -24,6 +30,7 @@ export default function DetailScreenImageCarousel({ images }: Props) {
             source={{ uri: url }}
             alt={`사진 ${i}`}
             tw="w-full h-full"
+            style={{ borderRadius: rounded ? 16 : 0 }}
           />
         ))}
       </PagerView>
