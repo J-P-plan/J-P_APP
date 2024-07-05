@@ -1,5 +1,6 @@
 import { Text, View, Pressable } from "react-native";
-import type { ReviewData } from "@/types/api/review";
+import { Link } from "expo-router";
+import type { ReviewData, TravelReviewType } from "@/types/api/review";
 import ArticleSeparator from "@/components/ui/travelReview/atoms/ArticleSeparator";
 import UserProfile from "@/components/common/UserProfile";
 import StarRating from "@/components/common/StarRating";
@@ -14,11 +15,12 @@ const images = [
 ];
 
 interface Props {
+  type: TravelReviewType;
   article: ReviewData;
   last?: boolean;
 }
 
-export default function ArticlePreview({ article, last }: Props) {
+export default function ArticlePreview({ type, article, last }: Props) {
   return (
     <>
       <View tw="flex-1 mt-4" style={{ gap: 8 }}>
@@ -31,17 +33,22 @@ export default function ArticlePreview({ article, last }: Props) {
           />
           <StarRating rating={article.star} />
         </View>
-        <Pressable tw="py-5 px-[30px] rounded border border-gray-200 bg-white">
-          <Text numberOfLines={1} tw="font-normal text-sm text-gray-900">
-            {article.subject}
-          </Text>
-          <Text numberOfLines={2} tw="font-normal text-sm text-gray-900">
-            {article.content}
-          </Text>
-          <Text tw="absolute top-3 right-[15px] font-normal text-xs text-gray-300">
-            {"더보기"}
-          </Text>
-        </Pressable>
+        <Link
+          href={`/(tabs)/travelReview/(detail)/${type}/${article.id}`}
+          asChild
+        >
+          <Pressable tw="py-5 px-[30px] rounded border border-gray-200 bg-white">
+            <Text numberOfLines={1} tw="font-normal text-sm text-gray-900">
+              {article.subject}
+            </Text>
+            <Text numberOfLines={2} tw="font-normal text-sm text-gray-900">
+              {article.content}
+            </Text>
+            <Text tw="absolute top-3 right-4 font-normal text-xs text-gray-300">
+              {"더보기"}
+            </Text>
+          </Pressable>
+        </Link>
         {images && <ImageCarousel images={images} height={190} rounded />}
         <View tw="flex-row items-center" style={{ gap: 6 }}>
           <LikeCount count={article.likeCnt} />

@@ -34,7 +34,7 @@ export default function TravelReviewIndexScreen({ type }: Props) {
             currentSort={currentSort}
             handleSortChange={handleSortChange}
           />
-          {list && <IndexArticleList list={list.data} />}
+          {list && <IndexArticleList type={type} list={list.data} />}
         </ContentWrapper>
       </ScrollView>
     </SafeAreaView>
