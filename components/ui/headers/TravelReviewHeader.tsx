@@ -7,10 +7,11 @@ import {
 
 interface Props {
   type: TravelReviewHeaderType;
-  title?: string | React.ReactNode;
+  title: string;
+  icon?: React.ReactNode;
 }
 
-export default function TravelReviewHeader({ type, title = "" }: Props) {
+export default function TravelReviewHeader({ type, title, icon }: Props) {
   const paddingTop = useSafeAreaInsets().top;
   const height = paddingTop + 60;
   const HeaderContent = TravelReviewHeaderContent[type];
@@ -18,10 +19,10 @@ export default function TravelReviewHeader({ type, title = "" }: Props) {
   return (
     <View
       style={{ paddingTop, height }}
-      tw="flex-row items-center justify-between px-4"
+      tw="flex-row items-center justify-between px-4 bg-background"
     >
       <HeaderContent.left />
-      <HeaderContent.center title={title} />
+      <HeaderContent.center title={title} icon={icon} />
       <HeaderContent.right />
     </View>
   );
