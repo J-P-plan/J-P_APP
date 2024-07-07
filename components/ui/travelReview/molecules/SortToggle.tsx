@@ -1,11 +1,11 @@
 import { View } from "react-native";
-import type { Sort } from "@/types/screen/travelReview";
+import type { SortOption } from "@/types/screen/travelReview";
 import SortChip from "@/components/ui/travelReview/atoms/SortChip";
 
 interface Props {
-  sorts: { name: string; value: Sort }[];
-  currentSort: Sort;
-  handleSortChange: (value: Sort) => void;
+  sorts: { name: string; value: SortOption }[];
+  currentSort: SortOption;
+  handleSortChange: (value: SortOption) => void;
 }
 
 export default function SortToggle({
