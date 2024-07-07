@@ -1,8 +1,8 @@
-import { View, Text } from "react-native";
 import { Stack, useLocalSearchParams } from "expo-router";
 import { useReviewData } from "@/hooks/query/reviewData";
 import TravelReviewHeader from "@/components/ui/headers/TravelReviewHeader";
 import MarkerIcon from "@/assets/icons/common/marker.svg";
+import TravelReviewDetailScreen from "@/components/ui/travelReview/DetailScreen";
 
 export default function ReviewDetailScreen() {
   const { id } = useLocalSearchParams();
@@ -21,6 +21,9 @@ export default function ReviewDetailScreen() {
           ),
         }}
       />
+      {reviewData && (
+        <TravelReviewDetailScreen type="review" data={reviewData} />
+      )}
     </>
   );
 }
