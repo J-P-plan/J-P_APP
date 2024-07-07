@@ -27,7 +27,7 @@ export default function ArticlePreview({ type, article, last }: Props) {
         <View tw="flex-row items-center justify-between">
           <UserProfile
             size="medium"
-            profileUrl={article.userCompactResDto.picture || undefined}
+            profileUrl={article.userCompactResDto.picture}
             name={article.userCompactResDto.nickname}
             createdAt="24.3.24"
           />

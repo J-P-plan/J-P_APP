@@ -1,7 +1,5 @@
-import { Text, View, Pressable } from "react-native";
-import { Link } from "expo-router";
-import type { ReviewData, ReviewResponse, TravelReviewType } from "@/types/api/review";
-import ArticleSeparator from "@/components/ui/travelReview/atoms/ArticleSeparator";
+import { Text, View } from "react-native";
+import type { ReviewResponse, TravelReviewType } from "@/types/api/review";
 import UserProfile from "@/components/common/UserProfile";
 import StarRating from "@/components/common/StarRating";
 import LikeCount from "@/components/common/LikeCount";
@@ -25,7 +23,7 @@ export default function Article({ type, article }: Props) {
       <View tw="flex-row items-center justify-between">
         <UserProfile
           size="medium"
-          profileUrl={article.userCompactResDto.picture || undefined}
+          profileUrl={article.userCompactResDto.picture}
           name={article.userCompactResDto.nickname}
           createdAt="24.3.24"
         />
