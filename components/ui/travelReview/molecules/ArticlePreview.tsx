@@ -6,7 +6,7 @@ import UserProfile from "@/components/common/display/UserProfile";
 import StarRating from "@/components/common/display/StarRating";
 import LikeCount from "@/components/common/display/LikeCount";
 import CommentCount from "@/components/common/display/CommentCount";
-import ImageCarousel from "@/components/common/Carousel";
+import ImageCarousel from "@/components/common/layout/Carousel";
 
 const images = [
   "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1300&maxheight=731&photo_reference=AUc7tXU6FtZzqj6wu5_unaWMcRWjOXdY-wAQ0WgiEhSZnENgl1f1v4M4Y3xGr4c3SdjhdcVKQB-se4NOq62_OrckT2rE1H1FdxNsiEC9bGoo2P23R6HS8NyNe_le9XKeqdqzi0RCih9xoh9Oa9CA8cuKi7mdQwqS3S4XKXAX4EuwH9haxHO1&key=AIzaSyCTeOA4gqhKBT_ID23OABN_zndStqAx3f0",
