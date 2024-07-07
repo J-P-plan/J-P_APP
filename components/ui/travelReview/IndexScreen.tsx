@@ -4,7 +4,7 @@ import { ScrollView } from "react-native-gesture-handler";
 import { useTravelReviewListData } from "@/hooks/query/reviewData";
 import { ReviewSort, type TravelReviewType } from "@/types/api/review";
 import type { SortOption } from "@/types/screen/travelReview";
-import ContentWrapper from "@/components/common/ContentWrapper";
+import ContentWrapper from "@/components/common/layout/ContentWrapper";
 import SortToggle from "@/components/ui/travelReview/molecules/SortToggle";
 import IndexArticleList from "@/components/ui/travelReview/organisms/IndexArticleList";
 

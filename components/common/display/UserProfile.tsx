@@ -1,5 +1,5 @@
 import { Image, Text, View } from "react-native";
-import VerticalSeparator from "@/components/common/Separator";
+import VerticalSeparator from "@/components/common/display/Separator";
 import { cn } from "@/lib/util";
 
 interface Props {

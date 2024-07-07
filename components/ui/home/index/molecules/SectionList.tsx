@@ -4,7 +4,7 @@ import type { HomeSectionItemProps } from "@/types/screen/home";
 import type { PlaceData } from "@/types/api/place";
 import type { ReviewData } from "@/types/api/review";
 import type { TravelLogData } from "@/types/api/travelLog";
-import HorizontalScrollView from "@/components/common/HorizontalScrollView";
+import HorizontalScrollView from "@/components/common/layout/HorizontalScrollView";
 import PlaceCard from "@/components/ui/home/index/atoms/PlaceCard";
 import CityCard from "@/components/ui/home/index/atoms/CityCard";
 import TravelLogCard from "@/components/ui/home/index/atoms/TravelLogCard";

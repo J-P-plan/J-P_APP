@@ -1,10 +1,10 @@
 import { Text, View, Image } from "react-native";
 import { Link } from "expo-router";
 import type { TravelLogData } from "@/types/api/travelLog";
-import TagChip from "@/components/common/TagChip";
-import UserProfile from "@/components/common/UserProfile";
-import LikeCount from "@/components/common/LikeCount";
-import CommentCount from "@/components/common/CommentCount";
+import TagChip from "@/components/common/display/TagChip";
+import UserProfile from "@/components/common/display/UserProfile";
+import LikeCount from "@/components/common/display/LikeCount";
+import CommentCount from "@/components/common/display/CommentCount";
 
 interface Props {
   data: TravelLogData;
@@ -12,7 +12,10 @@ interface Props {
 
 export default function TravelLogCard({ data }: Props) {
   return (
-    <Link href={`/(tabs)/travelReview/(detail)/travel-log/${data.id}`} tw="mb-3">
+    <Link
+      href={`/(tabs)/travelReview/(detail)/travel-log/${data.id}`}
+      tw="mb-3"
+    >
       <View tw="flex-row w-[343px] h-20">
         <View tw="w-[85px] h-full mr-2.5 rounded bg-gray-200"></View>
         {/* TODO Image  */}

@@ -5,7 +5,7 @@ import { useFonts } from "expo-font";
 import { Stack, useRouter } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import LoadingSpinner from "@/components/common/LoadingSpinner";
+import LoadingSpinner from "@/components/common/feedback/LoadingSpinner";
 
 SplashScreen.preventAutoHideAsync();
 

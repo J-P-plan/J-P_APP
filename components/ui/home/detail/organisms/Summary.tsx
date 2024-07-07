@@ -1,6 +1,6 @@
 import { View, Text } from "react-native";
-import ContentWrapper from "@/components/common/ContentWrapper";
-import TagChip from "@/components/common/TagChip";
+import ContentWrapper from "@/components/common/layout/ContentWrapper";
+import TagChip from "@/components/common/display/TagChip";
 import DetailScreenSectionTitle from "@/components/ui/home/detail/molecules/shared/Title";
 import MarkerIcon from "@/assets/icons/common/marker.svg";
 

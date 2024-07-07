@@ -1,9 +1,9 @@
 import { Text, View } from "react-native";
 import type { ReviewResponse, TravelReviewType } from "@/types/api/review";
-import UserProfile from "@/components/common/UserProfile";
-import StarRating from "@/components/common/StarRating";
-import LikeCount from "@/components/common/LikeCount";
-import CommentCount from "@/components/common/CommentCount";
+import UserProfile from "@/components/common/display/UserProfile";
+import StarRating from "@/components/common/display/StarRating";
+import LikeCount from "@/components/common/display/LikeCount";
+import CommentCount from "@/components/common/display/CommentCount";
 import ImageCarousel from "@/components/common/Carousel";
 
 const images = [

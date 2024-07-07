@@ -2,10 +2,10 @@ import { Text, View, Pressable } from "react-native";
 import { Link } from "expo-router";
 import type { ReviewData, TravelReviewType } from "@/types/api/review";
 import ArticleSeparator from "@/components/ui/travelReview/atoms/ArticleSeparator";
-import UserProfile from "@/components/common/UserProfile";
-import StarRating from "@/components/common/StarRating";
-import LikeCount from "@/components/common/LikeCount";
-import CommentCount from "@/components/common/CommentCount";
+import UserProfile from "@/components/common/display/UserProfile";
+import StarRating from "@/components/common/display/StarRating";
+import LikeCount from "@/components/common/display/LikeCount";
+import CommentCount from "@/components/common/display/CommentCount";
 import ImageCarousel from "@/components/common/Carousel";
 
 const images = [
