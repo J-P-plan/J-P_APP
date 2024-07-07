@@ -11,9 +11,12 @@ export async function GET(request: Request) {
     `${process.env.BACKEND_ENDPOINT}/googleplace/nearby-search/page?lat=${lat}&lng=${lng}&radius=${radius}`
   );
 
-  const res = await response.json();
+  if (response.ok) {
+    const res = await response.json();
 
-  return Response.json(res);
+    return Response.json(res);
+  }
+  
   return Response.json(data);
 }
 

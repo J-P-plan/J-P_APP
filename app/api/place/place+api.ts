@@ -7,13 +7,15 @@ export async function GET(request: Request) {
     PlaceType.TRAVEL_PLACE;
   const elementCnt = new URL(request.url).searchParams.get("elementCnt") || 10;
 
-  //   const response = await fetch(
-  //     `${process.env.BACKEND_ENDPOINT}/place/page?page=${page}&placeType=${placeType}&elementCnt=${elementCnt}`
-  //   );
+  const response = await fetch(
+    `${process.env.BACKEND_ENDPOINT}/place/page?page=${page}&placeType=${placeType}&elementCnt=${elementCnt}`
+  );
 
-  //   const res = await response.json();
+  if (response.ok) {
+    const res = await response.json();
 
-  //   return Response.json(res);
+    return Response.json(res);
+  }
 
   let data;
 
@@ -45,21 +47,24 @@ const mockDataCity = {
       placeId: "ChIJX7zzpqekczURlIbIAK4ltrs",
       name: "목포",
       subName: "전라남도 목포",
-      photoUrl: null,
+      photoUrl:
+        "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1300&maxheight=731&photo_reference=AUc7tXU6FtZzqj6wu5_unaWMcRWjOXdY-wAQ0WgiEhSZnENgl1f1v4M4Y3xGr4c3SdjhdcVKQB-se4NOq62_OrckT2rE1H1FdxNsiEC9bGoo2P23R6HS8NyNe_le9XKeqdqzi0RCih9xoh9Oa9CA8cuKi7mdQwqS3S4XKXAX4EuwH9haxHO1&key=AIzaSyCTeOA4gqhKBT_ID23OABN_zndStqAx3f0",
     },
     {
       id: 14,
       placeId: "ChIJzZqMtnOifDURQ0_wKF2H2gg",
       name: "익산",
       subName: "전라북도 익산",
-      photoUrl: null,
+      photoUrl:
+        "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1300&maxheight=731&photo_reference=AUc7tXU6FtZzqj6wu5_unaWMcRWjOXdY-wAQ0WgiEhSZnENgl1f1v4M4Y3xGr4c3SdjhdcVKQB-se4NOq62_OrckT2rE1H1FdxNsiEC9bGoo2P23R6HS8NyNe_le9XKeqdqzi0RCih9xoh9Oa9CA8cuKi7mdQwqS3S4XKXAX4EuwH9haxHO1&key=AIzaSyCTeOA4gqhKBT_ID23OABN_zndStqAx3f0",
     },
     {
       id: 13,
       placeId: "ChIJR4ITJ4mplzUR1JYR3TPT4Rg",
       name: "청주",
       subName: "충청북도 청주",
-      photoUrl: null,
+      photoUrl:
+        "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1300&maxheight=731&photo_reference=AUc7tXU6FtZzqj6wu5_unaWMcRWjOXdY-wAQ0WgiEhSZnENgl1f1v4M4Y3xGr4c3SdjhdcVKQB-se4NOq62_OrckT2rE1H1FdxNsiEC9bGoo2P23R6HS8NyNe_le9XKeqdqzi0RCih9xoh9Oa9CA8cuKi7mdQwqS3S4XKXAX4EuwH9haxHO1&key=AIzaSyCTeOA4gqhKBT_ID23OABN_zndStqAx3f0",
     },
     {
       id: 12,
@@ -127,21 +132,24 @@ const mockDataPlace = {
       placeId: "ChIJa_-BmFusZTURS5qX2VO3vCE",
       name: "남이섬",
       subName: "강원도 춘천",
-      photoUrl: null,
+      photoUrl:
+        "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1300&maxheight=731&photo_reference=AUc7tXU6FtZzqj6wu5_unaWMcRWjOXdY-wAQ0WgiEhSZnENgl1f1v4M4Y3xGr4c3SdjhdcVKQB-se4NOq62_OrckT2rE1H1FdxNsiEC9bGoo2P23R6HS8NyNe_le9XKeqdqzi0RCih9xoh9Oa9CA8cuKi7mdQwqS3S4XKXAX4EuwH9haxHO1&key=AIzaSyCTeOA4gqhKBT_ID23OABN_zndStqAx3f0",
     },
     {
       id: 34,
       placeId: "ChIJzWXFYYuifDURmj6F2Wf_NZs",
       name: "전주 한옥마을",
       subName: "전라북도 전주",
-      photoUrl: null,
+      photoUrl:
+        "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1300&maxheight=731&photo_reference=AUc7tXU6FtZzqj6wu5_unaWMcRWjOXdY-wAQ0WgiEhSZnENgl1f1v4M4Y3xGr4c3SdjhdcVKQB-se4NOq62_OrckT2rE1H1FdxNsiEC9bGoo2P23R6HS8NyNe_le9XKeqdqzi0RCih9xoh9Oa9CA8cuKi7mdQwqS3S4XKXAX4EuwH9haxHO1&key=AIzaSyCTeOA4gqhKBT_ID23OABN_zndStqAx3f0",
     },
     {
       id: 33,
       placeId: "ChIJJ0lG1G6jfDURQeKP1MfRMUE",
       name: "경주 불국사",
       subName: "경상북도 경주",
-      photoUrl: null,
+      photoUrl:
+        "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1300&maxheight=731&photo_reference=AUc7tXU6FtZzqj6wu5_unaWMcRWjOXdY-wAQ0WgiEhSZnENgl1f1v4M4Y3xGr4c3SdjhdcVKQB-se4NOq62_OrckT2rE1H1FdxNsiEC9bGoo2P23R6HS8NyNe_le9XKeqdqzi0RCih9xoh9Oa9CA8cuKi7mdQwqS3S4XKXAX4EuwH9haxHO1&key=AIzaSyCTeOA4gqhKBT_ID23OABN_zndStqAx3f0",
     },
     {
       id: 32,

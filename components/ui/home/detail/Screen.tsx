@@ -47,8 +47,7 @@ export default function HomeDetailScreen({ data, type = "place" }: Props) {
         <ImageCarousel images={data.photoUrls} />
         <DetailScreenSummary
           name={data.name}
-          tags={["벚꽃 명소", "산책코스", "아름다운 길", "나들이"]}
-          //   tags={data.tags}
+          tags={data.tags}
           description={data.description}
         />
         {type === "place" && (

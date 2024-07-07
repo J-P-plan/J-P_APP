@@ -1,13 +1,15 @@
 export async function GET(request: Request) {
   const placeId = new URL(request.url).searchParams.get("id");
 
-  //   const response = await fetch(
-  //     `${process.env.BACKEND_ENDPOINT}/place/details/${placeId}`
-  //   );
+  const response = await fetch(
+    `${process.env.BACKEND_ENDPOINT}/place/details/${placeId}`
+  );
 
-  //   const res = await response.json();
+  if (response.ok) {
+    const res = await response.json();
 
-  //   return Response.json(res);
+    return Response.json(res);
+  }
 
   return Response.json(data);
 }
@@ -17,25 +19,29 @@ export async function GET(request: Request) {
 // - ChIJR4ITliVveTURQmG3LJD9N30 (대구)
 
 const data = {
-  id: 17,
-  placeId: "ChIJucAviZkZbjURT-cf73qYS2I",
-  name: "구례 섬진강 벚꽃길 (동해마을 벚꽃길)",
-  formattedAddress: "대한민국 전라남도 구례군 문척면 죽마리 산98-1",
-  location: { lat: 35.167742, lng: 127.4672947 },
-  description: "섬진강을 따라 펼쳐지는 아름다운 벚꽃길입니다.",
-  tags: [],
+  id: 300,
+  placeId: "ChIJR7Y1TBFyYzURB9CrhSkMGuE",
+  name: "소금산 출렁다리",
+  formattedAddress: "대한민국 강원도 원주시 지정면 소금산길 12",
+  description: "강원도 원주에 위치한 아름다운 출렁다리입니다.",
+  tags: ["여름여행", "바닷가", "태그예시", "여행가고싶다"],
   photoUrls: [
-    "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1300&maxheight=731&photo_reference=AUc7tXU6FtZzqj6wu5_unaWMcRWjOXdY-wAQ0WgiEhSZnENgl1f1v4M4Y3xGr4c3SdjhdcVKQB-se4NOq62_OrckT2rE1H1FdxNsiEC9bGoo2P23R6HS8NyNe_le9XKeqdqzi0RCih9xoh9Oa9CA8cuKi7mdQwqS3S4XKXAX4EuwH9haxHO1&key=AIzaSyCTeOA4gqhKBT_ID23OABN_zndStqAx3f0",
-    "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1300&maxheight=731&photo_reference=AUc7tXW856N3hWqbGPeCMQklQ4G58GANpRrZBqPlWFqrRw4x7u5ZoTQ1ww9XsgfmoCVN-e2BAqjayllTYgd6B1vtdPrZWTXtG6OUqmjFCOnySfb3pA6PJyqrAsceQ2D04ue-7-uZlVNEdmbdKv_WgUqP8GMPXFEdvHCfZNn8TtmjwurGHYUF&key=AIzaSyCTeOA4gqhKBT_ID23OABN_zndStqAx3f0",
-    "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1300&maxheight=731&photo_reference=AUc7tXVSze_WUcAhYj_ImLSxCy7buFe7N35VwEia9vzyL4FDMJgZCXVWwsa41pNrb1AMzZDPPmfaJXgIbUQRGJCbC_ewXs4gPPaKouFQp-AcOPSIPiOCwIpOLd9E6lRKPtFget7nC3-3MnWeqh6qPkHFKP_FgQHyGOnweg5Db1AluJO-LqU3&key=AIzaSyCTeOA4gqhKBT_ID23OABN_zndStqAx3f0",
-    "https://maps.googleapis.com/maps/api/place/photo?maxwidth=2252&maxheight=4000&photo_reference=AUc7tXWf5c8zLRDPf6btMNswe5gTKKjC97PFE73LRP1qlf547lN4qZumQcEDBtq4WasE6UAYnD4HPEXfaNsGNxZyJxR0wIKPJdWoIIai6cAR2fvUKRjvWeKPjrASpmrHYQ82iHewBiOu6QuO3q0Qsxg8INJvR3wwUlEa1URbqX2HMT8Uo8pg&key=AIzaSyCTeOA4gqhKBT_ID23OABN_zndStqAx3f0",
-    "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1300&maxheight=731&photo_reference=AUc7tXXnIrryw66v5ff7u_01Qqbje0mhwBhmXCn77Mdr0XgGRjAeRB4RdmGrUc1V8SKO-XYOPTvcdR1L30_E3vYtTLELok54ftHtgdgnC6-um82ZTrawmCjwRjKWlKJbdOGsb06Sz08v6FSI09zpKThM0omNFmGiLnKre133t8U1WvKLfmEf&key=AIzaSyCTeOA4gqhKBT_ID23OABN_zndStqAx3f0",
-    "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1300&maxheight=731&photo_reference=AUc7tXWtW_cfDHZS54OYTHl7R6hOly97qRUHwBTzf3MrRrFM7EdPlvTTyy1HP306gmmpr4y-iNqQcA1Gv7qNJ_kLhQmCs6gYAHImBkZPumRiBBRgZ_J41PqCJ33Ngs-Lt3uk4UjU3nsrnCFYr-FdiW41yI7r5Yhxp3wO199wRbpezCQEYod3&key=AIzaSyCTeOA4gqhKBT_ID23OABN_zndStqAx3f0",
-    "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1300&maxheight=731&photo_reference=AUc7tXXi2Iho6adqrUKrwdUze1mu8oHUrABxw55w-FQinL4KuCOJU83dA2kfADvh_yb3IUP9H4S8H5k1E33zGsw46yAeszo4aod233KV7hq4fD3AG3aRKzkNggbGcJ_dMyGcjj4iGKjrJfYP_u3dSymFri_yvoPsQVqHNCvsBQgXjndin7xv&key=AIzaSyCTeOA4gqhKBT_ID23OABN_zndStqAx3f0",
-    "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1300&maxheight=731&photo_reference=AUc7tXXZ4Btk0s31I1COGWwoqA_HKPHWLaWlpEI3fwo5Yt2LTDbq7_Bglxg-J_PO1zmtiVRUDZLgN4j33GVTdpNI8UU3Mefdlx1GX7jPJQMnF1j7wYed9X0pN8Nru2mhiHB93EuGr67mtkTOY8Z47kyfhT5jdmiCVi4LNZMtBbBlFgHi1QzV&key=AIzaSyCTeOA4gqhKBT_ID23OABN_zndStqAx3f0",
-    "https://maps.googleapis.com/maps/api/place/photo?maxwidth=4000&maxheight=2252&photo_reference=AUc7tXVwLYdWrHdFKL1qK0pIhGfC5MwEHpuTTSn3ir0u5KooVecDFt0AGwjh8wZcwX4cdh8t7nNwG6JuH3CigqJD1MRiGcgStCLg4DEzcFEW1i9D9lImORMEdtZlBZqJU3StfORDNEw_8SRwTzfOzLnTFzA3P67qzEmYvgW9bdmckdY2xpJi&key=AIzaSyCTeOA4gqhKBT_ID23OABN_zndStqAx3f0",
-    "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1300&maxheight=731&photo_reference=AUc7tXXJF1YpUsBeelBkfr123OY5hT03KXI906EFlHIU0TMTA77lZIcay-01-GLBJmwzbVo8jd2vfAGcSmajqNnEYc29QB4ZO8L6lyu_AfFwWk1XUDYS_fUoOaWdrdtnxrgRwwlTsulIJjRJ_MLw4EYVv9jj8bugXVOQAZTlf1wzaUID0G1s&key=AIzaSyCTeOA4gqhKBT_ID23OABN_zndStqAx3f0",
+    "https://maps.googleapis.com/maps/api/place/photo?maxwidth=4032&maxheight=3024&photo_reference=AUc7tXVDIewxd2gfzAqtvXBwxs93gl0FLdehMd2zeXfqrm5AIrZLUmUj54tHvICTWFBxcDEVHqrtPKFdJtB5qdWIe3GJPLCiNun4y81Kox8sLkr1V_ruksUB-yw7lpkvLEIvjFsJIf68DqkwRk22RVtePygnJIvKP6Jf-JjG-2-3XPMKbOg&key=AIzaSyCTeOA4gqhKBT_ID23OABN_zndStqAx3f0",
+    "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1440&maxheight=1080&photo_reference=AUc7tXW29OymUE34TRD0o0Ly18DtAOUM2AU3eUZff63I4MefbaqBG83sfUJ6hglc3R4s0anJwuRV0M9PHBdE-yVapKKBMndht7UqO1CaHeTcbNXXm6IXw0iVPlaHHD-1Qwj4U95hd9KvVTw6Rsj0HGPD_t0FMy_ZSYnBwK5qFRrpX-62n776&key=AIzaSyCTeOA4gqhKBT_ID23OABN_zndStqAx3f0",
+    "https://maps.googleapis.com/maps/api/place/photo?maxwidth=4000&maxheight=3000&photo_reference=AUc7tXUT8XGcHdFw4I2ApFP12fxw_Z6UHhbKq1izgYtO92cg6RsjG-TM7RPo-_U9eTs3_MjVXIOI3R98IKWpdpPoTPcEVG2Oikj515hWkKq93uMsAuueQCgL6US0N4ekbrFquWr1EZ5ZfVGHzFHPIs3YOVH-Mc2KdAH4WtLtXlPW985khT_F&key=AIzaSyCTeOA4gqhKBT_ID23OABN_zndStqAx3f0",
+    "https://maps.googleapis.com/maps/api/place/photo?maxwidth=9248&maxheight=6936&photo_reference=AUc7tXV_xOUDnad8rbti7Rf-996cdReQk3wRyooES-xGtiRKd_whceEXAwIiwKTF43E5ccl61HW-9bHtOsWwadCta5snbPO3GRCPaTFNOu5DI5owYTq3XtFMsbBWU5sAAlRFLEbmc4Uoxr8c1AHkIED8AZffzZSbiMTbgwmGeM4Q2sBPYEHW&key=AIzaSyCTeOA4gqhKBT_ID23OABN_zndStqAx3f0",
+    "https://maps.googleapis.com/maps/api/place/photo?maxwidth=4656&maxheight=2620&photo_reference=AUc7tXUPruMQvGOt6aYYOhpQnPBANzX8Dj11AK3V4StyN8d7D0hcwUHqj3wPzHVhP5aGzayMPAW3Pukakx0JrgyfrN5hkom6hWBehySReOQ4TAaAii54YtdWRKCf31lrR-PxPHbB-ftSMTy6X8NkXWqiaWwhR-ETrO3Gwejz3wavFLutlHrg&key=AIzaSyCTeOA4gqhKBT_ID23OABN_zndStqAx3f0",
+    "https://maps.googleapis.com/maps/api/place/photo?maxwidth=4000&maxheight=3000&photo_reference=AUc7tXUWFWISMurz4FY_jbrKG_bIomU0MP3UHYpMtWtBdMPb59Pl-MmM-40JaBc0gO4JZsZZUYrP6vl2lu4wyNCiWWfvrl2FvFJO1q2PONEq4hCuccdZNLmoujkwCfz-CVM-y27Uwq0WDt6qAkf26SICydW1mZvFOp-VNwadmBXTr6WktkMC&key=AIzaSyCTeOA4gqhKBT_ID23OABN_zndStqAx3f0",
+    "https://maps.googleapis.com/maps/api/place/photo?maxwidth=4032&maxheight=3024&photo_reference=AUc7tXVKGIuJZVmTb9VqJJTfs9YJLlUWfAOgQaYzx1r4fsK3_TMESnbTkGLMwR1Z-W1S_TfORotyjagvBojxcG-TzCSkFujMMbBIUekiMDJiU9kZ4zAG_PHHUtbgVI9KHm9kWrW-mNlZem3yGoIdi9L3LHBfOZ3_HrdoIGLd0fFWhwO-2j_q&key=AIzaSyCTeOA4gqhKBT_ID23OABN_zndStqAx3f0",
+    "https://maps.googleapis.com/maps/api/place/photo?maxwidth=4000&maxheight=2252&photo_reference=AUc7tXWf-YQ6W7IjDv6e72kWqbLw3pB9AzLnUcJOvQAKDvJ_iMv2_RczHdl4wkAE_F0egW873xBcm1Hn78mLTkl9vhk1FPRaaygzGBKMIkcphxp3tuANVQN_zu6AnI-E2uB9aIGJQOKc57BlOPofRNMb775-I_KxelHltUnKGz-_oPV_RZtG&key=AIzaSyCTeOA4gqhKBT_ID23OABN_zndStqAx3f0",
+    "https://maps.googleapis.com/maps/api/place/photo?maxwidth=4624&maxheight=3468&photo_reference=AUc7tXU-iejl7qvQmcsUeC1mWEpyhYulnanKWzMP9rAXu6neR6dPz_VmHiPS7JZ6OJ9_TYZyqgfLvSoG2z-FnYdJesB511aE9s2EhEMKG0bIxTEVxPkoKmKEhW1EenpfL5X6kN1mxUcM0-LswOZ9Aj3TyqMsS9SthiJE0E4Q0Qc3i15fnPdS&key=AIzaSyCTeOA4gqhKBT_ID23OABN_zndStqAx3f0",
+    "https://maps.googleapis.com/maps/api/place/photo?maxwidth=4000&maxheight=3000&photo_reference=AUc7tXVu1H1UDIXM_ZQSzllCXDPa6zwCX1JyWqCLZNhizi8E7WdCqdFLX2KQSJhKvjNW2yQqVO-SaEDdKkXDwYAJgf1dbOV7okLirn8s1WggtJjCal3fpBJtrg4ssl880_1v6ZtzmnvvLVZ9bDuhPzugorhPOW1LydaR2iY-vdlPC9pq-xBs&key=AIzaSyCTeOA4gqhKBT_ID23OABN_zndStqAx3f0",
   ],
+  placeType: "TRAVEL_PLACE",
   likeCount: 0,
   isLiked: false,
+  location: {
+    lat: 37.3676264,
+    lng: 127.8248756,
+  },
 };

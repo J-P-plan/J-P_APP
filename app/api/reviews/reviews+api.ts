@@ -12,13 +12,15 @@ export async function GET(request: Request) {
 
   Object.entries(params).forEach(([k, v]) => v && searchParams.append(k, v));
 
-  //   const response = await fetch(
-  //   `${process.env.BACKEND_ENDPOINT}/reviews?${searchParams}`;
-  //   );
+  const response = await fetch(
+    `${process.env.BACKEND_ENDPOINT}/reviews?${searchParams}`
+  );
 
-  //   const res = await response.json();
+  //   if (response.ok) {
+  //     const res = await response.json();
 
-  //   return Response.json(res);
+  //     return Response.json(res);
+  //   }
 
   let data: any = mockData;
 
@@ -85,62 +87,6 @@ const mockData = {
     },
     {
       id: 12,
-      subject: "남한산성 둘레길 최고의 뷰 즐기기",
-      content:
-        "주말 당일치기로 둘레길 등산하고 경치도 구경하고 왔어요. 총 1시간정도 가볍게 걸었어요. 길도 찾기",
-      userCompactResDto: {
-        id: 4664,
-        nickname: "은지",
-        picture: "",
-      },
-      commentCnt: 8,
-      star: 4.8,
-      placeId: "ChIJzZqMtnOifDURQ0_wKF2H2gg",
-    },
-    {
-      id: 11,
-      subject: "남한산성 둘레길 최고의 뷰 즐기기",
-      content:
-        "주말 당일치기로 둘레길 등산하고 경치도 구경하고 왔어요. 총 1시간정도 가볍게 걸었어요. 길도 찾기",
-      userCompactResDto: {
-        id: 4664,
-        nickname: "은지",
-        picture: "",
-      },
-      commentCnt: 8,
-      star: 4.8,
-      placeId: "ChIJzZqMtnOifDURQ0_wKF2H2gg",
-    },
-    {
-      id: 10,
-      subject: "남한산성 둘레길 최고의 뷰 즐기기",
-      content:
-        "주말 당일치기로 둘레길 등산하고 경치도 구경하고 왔어요. 총 1시간정도 가볍게 걸었어요. 길도 찾기",
-      userCompactResDto: {
-        id: 4664,
-        nickname: "은지",
-        picture: "",
-      },
-      commentCnt: 8,
-      star: 4.8,
-      placeId: "ChIJzZqMtnOifDURQ0_wKF2H2gg",
-    },
-    {
-      id: 9,
-      subject: "남한산성 둘레길 최고의 뷰 즐기기",
-      content:
-        "주말 당일치기로 둘레길 등산하고 경치도 구경하고 왔어요. 총 1시간정도 가볍게 걸었어요. 길도 찾기",
-      userCompactResDto: {
-        id: 4664,
-        nickname: "은지",
-        picture: "",
-      },
-      commentCnt: 8,
-      star: 4.8,
-      placeId: "ChIJzZqMtnOifDURQ0_wKF2H2gg",
-    },
-    {
-      id: 8,
       subject: "남한산성 둘레길 최고의 뷰 즐기기",
       content:
         "주말 당일치기로 둘레길 등산하고 경치도 구경하고 왔어요. 총 1시간정도 가볍게 걸었어요. 길도 찾기",
