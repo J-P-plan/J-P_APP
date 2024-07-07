@@ -1,4 +1,4 @@
-import { TouchableOpacity, Text } from "react-native";
+import { Pressable, Text } from "react-native";
 import { Link } from "expo-router";
 
 interface Props {
@@ -10,9 +10,9 @@ interface Props {
 export default function LinkButton({ href, text, textStyle }: Props) {
   return (
     <Link href={href} asChild>
-      <TouchableOpacity activeOpacity={1}>
+      <Pressable>
         <Text tw={textStyle}>{text}</Text>
-      </TouchableOpacity>
+      </Pressable>
     </Link>
   );
 }

@@ -1,5 +1,5 @@
 import { View, Text } from "react-native";
-import LinkButton from "@/components/common/input/LinkButton";
+import LinkButton from "@/components/common/navigation/LinkButton";
 
 interface Props {
   title: string;
