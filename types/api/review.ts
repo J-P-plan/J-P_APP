@@ -45,18 +45,18 @@ export interface ReviewResponse {
   star: number;
   viewCnt: number;
   createdAt: string;
-  commentResDtoList: CommentResDtoList[];
+  commentResDtoList: CommentResDto[];
 }
 
-interface CommentResDtoList {
+export interface CommentResDto {
   id: number;
   content: string;
   userCompactResDto: UserCompactResDto;
   createdAt: string;
-  replyList: ReplyList[];
+  replyList: Reply[];
 }
 
-interface ReplyList {
+export interface Reply {
   id: number;
   content: string;
   userCompactResDto: UserCompactResDto;
