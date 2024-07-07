@@ -1,13 +1,14 @@
 import { Text, View, Image } from "react-native";
 import { Link } from "expo-router";
-import TagChip from "@/components/common/TagChip";
-import LikeCount from "@/components/common/LikeCount";
-import CommentCount from "@/components/common/CommentCount";
-import StarRating from "@/components/common/StarRating";
 import type { HomeSectionItemProps } from "@/types/screen/home";
 import type { PlaceData } from "@/types/api/place";
 import type { ReviewData } from "@/types/api/review";
 import type { TravelLogData } from "@/types/api/travelLog";
+import TagChip from "@/components/common/TagChip";
+import LikeCount from "@/components/common/LikeCount";
+import CommentCount from "@/components/common/CommentCount";
+import StarRating from "@/components/common/StarRating";
+import UserProfile from "@/components/common/UserProfile";
 
 interface ItemProps {
   data: PlaceData | ReviewData | TravelLogData;
@@ -94,10 +95,10 @@ const TravelLogItem = ({ data }: TravelLogItemProps) => {
           </Text>
         </View>
         <View tw="flex-row items-center justify-between">
-          <View tw="flex-row items-center">
-            <View tw="w-6 h-6 rounded-full bg-secondary-light"></View>
-            <Text tw="ml-2 text-xs">{data.userCompactResDto.nickname}</Text>
-          </View>
+          <UserProfile
+            profileUrl={data.userCompactResDto.picture}
+            name={data.userCompactResDto.nickname}
+          />
           <View tw="space-x-2 flex-row">
             <View tw="flex-row">
               <LikeCount count={data.like} textColor="text-gray-300" />
@@ -130,10 +131,10 @@ const ReviewItem = ({ data }: ReviewItemProps) => {
           </Text>
         </View>
         <View tw="flex-row items-center justify-between">
-          <View tw="flex-row items-center">
-            <View tw="w-6 h-6 rounded-full bg-secondary-light"></View>
-            <Text tw="ml-2 text-xs">{data.userCompactResDto.nickname}</Text>
-          </View>
+          <UserProfile
+            profileUrl={data.userCompactResDto.picture}
+            name={data.userCompactResDto.nickname}
+          />
           <View tw="space-x-2 flex-row">
             <View tw="flex-row">
               <StarRating rating={data.star} textColor="text-gray-300" />

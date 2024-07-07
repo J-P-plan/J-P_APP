@@ -1,9 +1,9 @@
-import { View, Text, Image } from "react-native";
-import VerticalSeparator from "@/components/common/Separator";
+import { View, Text } from "react-native";
+import type { ReviewData } from "@/types/api/review";
 import StarRating from "@/components/common/StarRating";
 import LikeCount from "@/components/common/LikeCount";
 import CommentCount from "@/components/common/CommentCount";
-import { ReviewData } from "@/types/api/review";
+import UserProfile from "@/components/common/UserProfile";
 
 interface Props {
   review: ReviewData;
@@ -13,21 +13,11 @@ export default function ReviewCard({ review }: Props) {
   return (
     <View tw="justify-between w-[271px] h-[134px] mr-2 py-4 px-6 rounded border border-gray-200 bg-white">
       <View tw="flex-row items-center justify-between">
-        <View tw="flex-row items-center">
-          {review.userCompactResDto.picture ? (
-            <Image
-              source={{ uri: review.userCompactResDto.picture }}
-              tw="w-6 h-6 rounded-full border border-gray-200/60"
-            />
-          ) : (
-            <View tw="w-6 h-6 rounded-full border border-gray-200/60 bg-secondary" />
-          )}
-          <Text tw="ml-2 font-normal text-xs text-gray-900">
-            {review.userCompactResDto.nickname}
-          </Text>
-          <VerticalSeparator />
-          <Text tw="font-normal text-xs text-gray-300">{review.createdAt}</Text>
-        </View>
+        <UserProfile
+          profileUrl={review.userCompactResDto.picture}
+          name={review.userCompactResDto.nickname}
+          createdAt={review.createdAt}
+        />
         <View tw="flex-row">
           <StarRating rating={review.star} textColor="text-gray-300" />
         </View>
