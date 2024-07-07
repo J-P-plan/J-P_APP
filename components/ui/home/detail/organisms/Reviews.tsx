@@ -1,6 +1,6 @@
 import { usePlaceReviewListData } from "@/hooks/query/reviewData";
-import ContentWrapper from "@/components/common/ContentWrapper";
-import HorizontalScrollView from "@/components/common/HorizontalScrollView";
+import ContentWrapper from "@/components/common/layout/ContentWrapper";
+import HorizontalScrollView from "@/components/common/layout/HorizontalScrollView";
 import DetailScreenSectionTitle from "@/components/ui/home/detail/molecules/shared/Title";
 import ReviewCard from "@/components/ui/home/detail/molecules/ReviewCard";
 import EditIcon from "@/assets/icons/common/edit.svg";

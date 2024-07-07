@@ -1,5 +1,5 @@
 import { View, Text } from "react-native";
-import ContentWrapper from "@/components/common/ContentWrapper";
+import ContentWrapper from "@/components/common/layout/ContentWrapper";
 import Map from "@/components/common/Map";
 import DetailScreenSectionTitle from "@/components/ui/home/detail/molecules/shared/Title";
 import MarkerIcon from "@/assets/icons/common/marker.svg";

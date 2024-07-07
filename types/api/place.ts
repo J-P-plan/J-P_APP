@@ -10,7 +10,7 @@ export interface PlaceData {
   placeId: string;
   name: string;
   subName: string;
-  photoUrl: null;
+  photoUrl: string;
 }
 
 const placeId = ["place-trending", "city-trending", "place-theme"] as const;

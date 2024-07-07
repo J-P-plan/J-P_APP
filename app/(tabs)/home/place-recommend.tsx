@@ -2,7 +2,7 @@ import { SafeAreaView, ScrollView, View } from "react-native";
 import { useLocalSearchParams } from "expo-router";
 import { useNearByListData } from "@/hooks/query/googlePlaceData";
 import Map from "@/components/common/Map";
-import BottomSheet from "@/components/common/BottomSheet";
+import BottomSheet from "@/components/common/layout/BottomSheet";
 import RecommendCard from "@/components/ui/home/list/RecommendCard";
 
 export default function PlaceRecommendScreen() {

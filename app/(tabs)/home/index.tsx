@@ -1,5 +1,5 @@
 import { SafeAreaView, ScrollView } from "react-native";
-import SearchBar from "@/components/common/SearchBar";
+import SearchBar from "@/components/common/input/SearchBar";
 import HomeSection from "@/components/ui/home/index/Section";
 
 export default function HomeScreen() {

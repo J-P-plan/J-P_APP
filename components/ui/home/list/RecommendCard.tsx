@@ -1,7 +1,7 @@
 import { Text, View } from "react-native";
 import type { NearByPlaceData } from "@/types/api/nearby";
-import StarRating from "@/components/common/StarRating";
-import TagChip from "@/components/common/TagChip";
+import StarRating from "@/components/common/display/StarRating";
+import TagChip from "@/components/common/display/TagChip";
 
 interface Props {
   data: NearByPlaceData;

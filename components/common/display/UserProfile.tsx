@@ -1,12 +1,12 @@
 import { Image, Text, View } from "react-native";
-import VerticalSeparator from "@/components/common/Separator";
+import VerticalSeparator from "@/components/common/display/Separator";
 import { cn } from "@/lib/util";
 
 interface Props {
   name: string;
   size?: "small" | "medium";
-  createdAt?: string;
-  profileUrl?: string;
+  createdAt?: string | null;
+  profileUrl?: string | null;
 }
 
 export default function UserProfile({
