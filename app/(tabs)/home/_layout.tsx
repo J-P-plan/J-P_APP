@@ -1,8 +1,14 @@
 import { Stack } from "expo-router";
-import HOME_MESSAGE from "@/message/home";
 import COLOR from "@/constants/colors";
 import HomeHeader from "@/components/ui/headers/HomeHeader";
 import { HomeHeaderContent } from "@/components/ui/headers/molecules/HomeHeaderContents";
+
+const homeListHeader = {
+  "place-trending": "인기 여행지",
+  "city-trending": "인기 도시",
+  "place-theme": "테마 여행지",
+  "place-recommend": "주변 여행지",
+};
 
 export default function HomeStacksLayout() {
   return (
@@ -20,10 +26,7 @@ export default function HomeStacksLayout() {
         name="place-trending"
         options={{
           header: () => (
-            <HomeHeader
-              type="list"
-              title={HOME_MESSAGE.homeListHeader["place-trending"]}
-            />
+            <HomeHeader type="list" title={homeListHeader["place-trending"]} />
           ),
           contentStyle: {
             backgroundColor: COLOR.background,
@@ -34,10 +37,7 @@ export default function HomeStacksLayout() {
         name="city-trending"
         options={{
           header: () => (
-            <HomeHeader
-              type="list"
-              title={HOME_MESSAGE.homeListHeader["city-trending"]}
-            />
+            <HomeHeader type="list" title={homeListHeader["city-trending"]} />
           ),
           contentStyle: {
             backgroundColor: COLOR.background,
@@ -48,10 +48,7 @@ export default function HomeStacksLayout() {
         name="place-theme"
         options={{
           header: () => (
-            <HomeHeader
-              type="list"
-              title={HOME_MESSAGE.homeListHeader["place-theme"]}
-            />
+            <HomeHeader type="list" title={homeListHeader["place-theme"]} />
           ),
           contentStyle: {
             backgroundColor: COLOR.background,
@@ -62,10 +59,7 @@ export default function HomeStacksLayout() {
         name="place-recommend"
         options={{
           header: () => (
-            <HomeHeader
-              type="list"
-              title={HOME_MESSAGE.homeListHeader["place-recommend"]}
-            />
+            <HomeHeader type="list" title={homeListHeader["place-recommend"]} />
           ),
           contentStyle: {
             backgroundColor: COLOR.background,

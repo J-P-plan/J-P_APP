@@ -2,7 +2,6 @@ import { View } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 import useSearchInput from "@/hooks/common/useSearchInput";
 import SearchIcon from "@/assets/icons/common/search.svg";
-import MESSAGE from "@/message/common";
 import COLOR from "@/constants/colors";
 
 export default function SearchBar() {
@@ -14,7 +13,7 @@ export default function SearchBar() {
       <TextInput
         tw="ml-[8px]"
         keyboardType="default"
-        placeholder={MESSAGE.searchPlaceholder}
+        placeholder={"여행지를 입력해주세요."}
         placeholderTextColor={COLOR.gray[300]}
         {...textInputProps}
       />
