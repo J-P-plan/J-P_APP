@@ -1,5 +1,5 @@
 import { useLocalSearchParams } from "expo-router";
-import { usePlaceData } from "@/hooks/query/placeData";
+import { usePlaceData } from "@/lib/hooks/query/placeData";
 import HomeDetailScreen from "@/components/ui/home/detail/Screen";
 
 export default function PlaceDetailScreen() {

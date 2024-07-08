@@ -1,4 +1,4 @@
-import { PlaceId } from "@/types/api/place";
+import { PlaceId } from "@/lib/types/api/place";
 
 export type HomeSectionId = PlaceId | "travel-log" | "review";
 

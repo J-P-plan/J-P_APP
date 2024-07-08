@@ -1,5 +1,5 @@
 import { Text, View } from "react-native";
-import type { HomeSectionItemProps } from "@/types/screen/home";
+import type { HomeSectionItemProps } from "@/lib/types/screen/home";
 import LinkButton from "@/components/common/navigation/LinkButton";
 
 const homeSectionTitle = {

@@ -1,5 +1,5 @@
 import { Stack } from "expo-router";
-import COLOR from "@/constants/colors";
+import COLOR from "@/lib/constants/colors";
 import HomeHeader from "@/components/ui/headers/HomeHeader";
 import { HomeHeaderContent } from "@/components/ui/headers/molecules/HomeHeaderContents";
 

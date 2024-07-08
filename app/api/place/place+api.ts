@@ -1,4 +1,4 @@
-import { PlaceType } from "@/types/api/place";
+import { PlaceType } from "@/lib/types/api/place";
 
 export async function GET(request: Request) {
   const page = new URL(request.url).searchParams.get("page") || 1;

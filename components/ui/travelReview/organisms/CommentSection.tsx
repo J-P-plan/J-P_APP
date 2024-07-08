@@ -1,5 +1,5 @@
 import { Text, View } from "react-native";
-import type { CommentResDto } from "@/types/api/review";
+import type { CommentResDto } from "@/lib/types/api/review";
 import CommentBar from "@/components/ui/travelReview/molecules/CommentBar";
 import Comment from "@/components/ui/travelReview/molecules/Comment";
 

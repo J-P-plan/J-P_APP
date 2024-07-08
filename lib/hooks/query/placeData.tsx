@@ -1,6 +1,6 @@
 import { type UseQueryResult, useQuery } from "@tanstack/react-query";
-import { type PlaceResponse, PlaceType } from "@/types/api/place";
-import type { PlaceDetailData } from "@/types/api/placeDetail";
+import { type PlaceResponse, PlaceType } from "@/lib/types/api/place";
+import type { PlaceDetailData } from "@/lib/types/api/placeDetail";
 
 export function usePlaceListData(
   type: keyof typeof PlaceType

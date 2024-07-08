@@ -1,6 +1,6 @@
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ScrollView } from "react-native-gesture-handler";
-import { ReviewResponse, type TravelReviewType } from "@/types/api/review";
+import { ReviewResponse, type TravelReviewType } from "@/lib/types/api/review";
 import ContentWrapper from "@/components/common/layout/ContentWrapper";
 import Article from "@/components/ui/travelReview/molecules/Article";
 import CommentSection from "@/components/ui/travelReview/organisms/CommentSection";

@@ -1,4 +1,4 @@
-import COLOR from "@/constants/colors";
+import COLOR from "@/lib/constants/colors";
 import { Back, Empty } from "@/components/ui/headers/atoms/Components";
 import { Title } from "@/components/ui/headers/atoms/TravelReviewComponents";
 

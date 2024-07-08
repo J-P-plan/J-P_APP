@@ -1,5 +1,5 @@
 import { type UseQueryResult, useQuery } from "@tanstack/react-query";
-import type { NearBySearchResponse } from "@/types/api/nearby";
+import type { NearBySearchResponse } from "@/lib/types/api/nearby";
 
 export function useNearByListData(
   lat: string | number | undefined,

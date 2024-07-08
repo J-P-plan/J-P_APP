@@ -1,5 +1,5 @@
 import { View } from "react-native";
-import type { SortOption } from "@/types/screen/travelReview";
+import type { SortOption } from "@/lib/types/screen/travelReview";
 import SortChip from "@/components/ui/travelReview/atoms/SortChip";
 
 interface Props {

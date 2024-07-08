@@ -1,6 +1,6 @@
 import { Text, View, Image } from "react-native";
 import { Link } from "expo-router";
-import type { ReviewData } from "@/types/api/review";
+import type { ReviewData } from "@/lib/types/api/review";
 import CommentCount from "@/components/common/display/CommentCount";
 import StarRating from "@/components/common/display/StarRating";
 import UserProfile from "@/components/common/display/UserProfile";

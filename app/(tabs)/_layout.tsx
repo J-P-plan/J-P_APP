@@ -4,7 +4,7 @@ import SearchIcon from "@/assets/icons/tabs/search.svg";
 import PlanIcon from "@/assets/icons/tabs/plan.svg";
 import TravelReviewIcon from "@/assets/icons/tabs/travelReview.svg";
 import MypageIcon from "@/assets/icons/tabs/mypage.svg";
-import COLOR from "@/constants/colors";
+import COLOR from "@/lib/constants/colors";
 
 export default function TabsLayout() {
   return (

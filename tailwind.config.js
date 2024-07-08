@@ -1,5 +1,5 @@
-const colors = require("./constants/colors");
-const borderRadius = require("./constants/borderRadius");
+const colors = require("./lib/constants/colors");
+const borderRadius = require("./lib/constants/borderRadius");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {

@@ -1,5 +1,5 @@
 import ArticlePreview from "@/components/ui/travelReview/molecules/ArticlePreview";
-import type { ReviewData, TravelReviewType } from "@/types/api/review";
+import type { ReviewData, TravelReviewType } from "@/lib/types/api/review";
 
 interface Props {
   type: TravelReviewType;

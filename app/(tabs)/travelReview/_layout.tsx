@@ -1,5 +1,5 @@
 import { Stack } from "expo-router";
-import COLORS from "@/constants/colors";
+import COLORS from "@/lib/constants/colors";
 import Header from "@/components/ui/headers/Header";
 import ToggleSwitch from "@/components/ui/travelReview/molecules/ToggleSwitch";
 

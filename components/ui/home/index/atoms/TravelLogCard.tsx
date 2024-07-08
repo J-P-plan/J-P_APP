@@ -1,6 +1,6 @@
 import { Text, View, Image } from "react-native";
 import { Link } from "expo-router";
-import type { TravelLogData } from "@/types/api/travelLog";
+import type { TravelLogData } from "@/lib/types/api/travelLog";
 import TagChip from "@/components/common/display/TagChip";
 import UserProfile from "@/components/common/display/UserProfile";
 import LikeCount from "@/components/common/display/LikeCount";

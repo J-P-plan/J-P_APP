@@ -1,6 +1,6 @@
 import { View } from "react-native";
-import { useNearByListData } from "@/hooks/query/googlePlaceData";
-import type { Location } from "@/types/api/placeDetail";
+import { useNearByListData } from "@/lib/hooks/query/googlePlaceData";
+import type { Location } from "@/lib/types/api/placeDetail";
 import ContentWrapper from "@/components/common/layout/ContentWrapper";
 import DetailScreenSectionTitle from "@/components/ui/home/detail/molecules/shared/Title";
 import NearByPlaceCard from "@/components/ui/home/detail/molecules/NearByPlaceCard";

@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ScrollView } from "react-native-gesture-handler";
-import { useTravelReviewListData } from "@/hooks/query/reviewData";
-import { ReviewSort, type TravelReviewType } from "@/types/api/review";
-import type { SortOption } from "@/types/screen/travelReview";
+import { useTravelReviewListData } from "@/lib/hooks/query/reviewData";
+import { ReviewSort, type TravelReviewType } from "@/lib/types/api/review";
+import type { SortOption } from "@/lib/types/screen/travelReview";
 import ContentWrapper from "@/components/common/layout/ContentWrapper";
 import SortToggle from "@/components/ui/travelReview/molecules/SortToggle";
 import IndexArticleList from "@/components/ui/travelReview/organisms/IndexArticleList";

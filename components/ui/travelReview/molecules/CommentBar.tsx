@@ -1,7 +1,7 @@
 import { Pressable, Text, View } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
-import useCommentInput from "@/hooks/common/useCommentInput";
-import COLOR from "@/constants/colors";
+import useCommentInput from "@/lib/hooks/common/useCommentInput";
+import COLOR from "@/lib/constants/colors";
 import { cn } from "@/lib/util";
 
 interface Props {
