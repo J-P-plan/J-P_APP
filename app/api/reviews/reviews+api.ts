@@ -1,4 +1,4 @@
-import { ReviewSearchParams, ReviewSort } from "@/types/api/review";
+import { ReviewSearchParams, ReviewSort } from "@/lib/types/api/review";
 
 export async function GET(request: Request) {
   const searchParams = new URLSearchParams();
@@ -16,11 +16,11 @@ export async function GET(request: Request) {
     `${process.env.BACKEND_ENDPOINT}/reviews?${searchParams}`
   );
 
-  //   if (response.ok) {
-  //     const res = await response.json();
+  if (response.ok) {
+    const res = await response.json();
 
-  //     return Response.json(res);
-  //   }
+    return Response.json(res);
+  }
 
   let data: any = mockData;
 

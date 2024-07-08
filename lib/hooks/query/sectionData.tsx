@@ -1,8 +1,8 @@
 import { type UseQueryResult, useQuery } from "@tanstack/react-query";
-import { type PlaceResponse, placeType } from "@/types/api/place";
-import type { ReviewListResponse } from "@/types/api/review";
-import type { TravelLogResponse } from "@/types/api/travelLog";
-import type { HomeSectionId } from "@/types/screen/home";
+import { type PlaceResponse, placeType } from "@/lib/types/api/place";
+import type { ReviewListResponse } from "@/lib/types/api/review";
+import type { TravelLogResponse } from "@/lib/types/api/travelLog";
+import type { HomeSectionId } from "@/lib/types/screen/home";
 
 export type SectionResponse =
   | PlaceResponse

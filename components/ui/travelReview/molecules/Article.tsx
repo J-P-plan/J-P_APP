@@ -1,5 +1,5 @@
 import { Text, View } from "react-native";
-import type { ReviewResponse, TravelReviewType } from "@/types/api/review";
+import type { ReviewResponse, TravelReviewType } from "@/lib/types/api/review";
 import UserProfile from "@/components/common/display/UserProfile";
 import StarRating from "@/components/common/display/StarRating";
 import LikeCount from "@/components/common/display/LikeCount";

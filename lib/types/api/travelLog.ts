@@ -1,4 +1,4 @@
-import type { PageInfo } from "./common";
+import type { PageInfo } from "@/lib/types/api/common";
 
 export interface TravelLogResponse {
   pageInfo: PageInfo;

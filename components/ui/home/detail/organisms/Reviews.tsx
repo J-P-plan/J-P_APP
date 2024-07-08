@@ -1,4 +1,4 @@
-import { usePlaceReviewListData } from "@/hooks/query/reviewData";
+import { usePlaceReviewListData } from "@/lib/hooks/query/reviewData";
 import ContentWrapper from "@/components/common/layout/ContentWrapper";
 import HorizontalScrollView from "@/components/common/layout/HorizontalScrollView";
 import DetailScreenSectionTitle from "@/components/ui/home/detail/molecules/shared/Title";

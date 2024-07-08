@@ -1,6 +1,6 @@
 import { View, Text } from "react-native";
 import { Link } from "expo-router";
-import type { PlaceData } from "@/types/api/place";
+import type { PlaceData } from "@/lib/types/api/place";
 
 interface Props {
   data: PlaceData;

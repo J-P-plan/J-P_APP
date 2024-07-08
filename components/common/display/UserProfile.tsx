@@ -15,9 +15,6 @@ export default function UserProfile({
   createdAt,
   profileUrl,
 }: Props) {
-  const altColors = ["primary", "secondary", "secondary-light"];
-  const randomAltColor = altColors[Math.floor(Math.random() * 3)];
-
   return (
     <View tw="flex-row items-center">
       {profileUrl ? (
@@ -27,7 +24,7 @@ export default function UserProfile({
         />
       ) : (
         <View
-          tw={`w-6 h-6 rounded-full border border-gray-200/60 bg-${randomAltColor}`}
+          tw={`w-6 h-6 rounded-full border border-gray-200/60 bg-secondary-light`}
         />
       )}
       <Text

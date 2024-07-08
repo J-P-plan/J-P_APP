@@ -1,6 +1,6 @@
 import { Text, View, Pressable } from "react-native";
 import { Link } from "expo-router";
-import type { ReviewData, TravelReviewType } from "@/types/api/review";
+import type { ReviewData, TravelReviewType } from "@/lib/types/api/review";
 import ArticleSeparator from "@/components/ui/travelReview/atoms/ArticleSeparator";
 import UserProfile from "@/components/common/display/UserProfile";
 import StarRating from "@/components/common/display/StarRating";

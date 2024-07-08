@@ -5,7 +5,7 @@ import Animated, {
   useSharedValue,
   withSpring,
 } from "react-native-reanimated";
-import COLORS from "@/constants/colors";
+import COLORS from "@/lib/constants/colors";
 
 const { height: SCREEN_HEIGHT } = Dimensions.get("window");
 const MAX_VALUE = SCREEN_HEIGHT / 1.5;

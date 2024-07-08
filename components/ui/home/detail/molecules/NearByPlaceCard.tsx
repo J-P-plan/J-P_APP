@@ -1,5 +1,5 @@
 import { View, Text, Image } from "react-native";
-import type { NearByPlaceData } from "@/types/api/nearby";
+import type { NearByPlaceData } from "@/lib/types/api/nearby";
 import VerticalSeparator from "@/components/common/display/Separator";
 import StarRating from "@/components/common/display/StarRating";
 import PlusIcon from "@/assets/icons/common/plus.svg";

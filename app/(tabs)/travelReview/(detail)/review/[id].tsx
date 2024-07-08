@@ -1,5 +1,5 @@
 import { Stack, useLocalSearchParams } from "expo-router";
-import { useReviewData } from "@/hooks/query/reviewData";
+import { useReviewData } from "@/lib/hooks/query/reviewData";
 import TravelReviewHeader from "@/components/ui/headers/TravelReviewHeader";
 import MarkerIcon from "@/assets/icons/common/marker.svg";
 import TravelReviewDetailScreen from "@/components/ui/travelReview/DetailScreen";

@@ -1,5 +1,5 @@
 import { Text, View } from "react-native";
-import type { CommentResDto, Reply } from "@/types/api/review";
+import type { CommentResDto, Reply } from "@/lib/types/api/review";
 import UserProfile from "@/components/common/display/UserProfile";
 import ReplyCount from "@/components/common/display/ReplyCount";
 import CommentBar from "@/components/ui/travelReview/molecules/CommentBar";

@@ -5,7 +5,7 @@ import {
   TravelReviewType,
   ReviewResponse,
   ReviewListResponse,
-} from "@/types/api/review";
+} from "@/lib/types/api/review";
 
 export function useTravelReviewListData(
   type: TravelReviewType,

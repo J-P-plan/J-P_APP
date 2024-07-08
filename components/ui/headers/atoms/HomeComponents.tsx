@@ -1,5 +1,5 @@
 import { Text, Pressable } from "react-native";
-import COLOR from "@/constants/colors";
+import COLOR from "@/lib/constants/colors";
 import BellIcon from "@/assets/icons/header/bell.svg";
 import HeartIcon from "@/assets/icons/header/heart.svg";
 import { Background } from "@/components/ui/headers/atoms/Components";
