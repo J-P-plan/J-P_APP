@@ -1,4 +1,4 @@
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaView } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { ReviewResponse, type TravelReviewType } from "@/lib/types/api/review";
 import ContentWrapper from "@/components/common/layout/ContentWrapper";
@@ -13,7 +13,7 @@ interface Props {
 export default function TravelReviewDetailScreen({ type, data }: Props) {
   return (
     <SafeAreaView tw="flex-1 mb-10">
-      <ScrollView tw="pt-14">
+      <ScrollView>
         <ContentWrapper>
           <Article type={type} article={data} />
           <CommentSection comments={data.commentResDtoList} />
