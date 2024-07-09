@@ -1,7 +1,9 @@
 import { Text, Pressable, View } from "react-native";
 import { useRouter } from "expo-router";
-import ChevronLeftIcon from "@/assets/icons/header/chevronLeft.svg";
 import { cn } from "@/lib/util";
+import COLOR from "@/lib/constants/colors";
+import BellIcon from "@/assets/icons/header/bell.svg";
+import ChevronLeftIcon from "@/assets/icons/header/chevronLeft.svg";
 
 export const Background = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -35,10 +37,10 @@ export const Title = ({
 };
 
 export const Back = ({
-  color,
+  color = COLOR.gray[900],
   withBackground,
 }: {
-  color: string;
+  color?: string;
   withBackground?: boolean;
 }) => {
   const { back } = useRouter();
@@ -52,6 +54,14 @@ export const Back = ({
       ) : (
         <ChevronLeftIcon color={color} />
       )}
+    </Pressable>
+  );
+};
+
+export const Notification = () => {
+  return (
+    <Pressable tw="w-10 pr-[5px]">
+      <BellIcon color={COLOR.gray[900]} />
     </Pressable>
   );
 };

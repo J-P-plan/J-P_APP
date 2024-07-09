@@ -1,10 +1,11 @@
 import COLOR from "@/lib/constants/colors";
-import { Back, Empty, Title } from "@/components/ui/headers/atoms/Components";
 import {
-  HomeLeft,
-  HomeRight,
-  Like,
-} from "@/components/ui/headers/atoms/HomeComponents";
+  Back,
+  Empty,
+  Notification,
+  Title,
+} from "@/components/ui/headers/atoms/Components";
+import { Logo, Like } from "@/components/ui/headers/atoms/HomeComponents";
 
 const type = ["home", "list", "detail", "detailTransparent"] as const;
 export type HomeHeaderType = (typeof type)[number];
@@ -17,12 +18,12 @@ interface HeaderContent {
 
 export const HomeHeaderContent: Record<HomeHeaderType, HeaderContent> = {
   home: {
-    left: () => <HomeLeft />,
+    left: () => <Logo />,
     center: () => <Empty />,
-    right: () => <HomeRight />,
+    right: () => <Notification />,
   },
   list: {
-    left: () => <Back color={COLOR.gray[900]} />,
+    left: () => <Back />,
     center: ({ title }) => <Title title={title} />,
     right: () => <Empty />,
   },
@@ -32,7 +33,7 @@ export const HomeHeaderContent: Record<HomeHeaderType, HeaderContent> = {
     right: () => <Like color={COLOR.white} withBackground />,
   },
   detail: {
-    left: () => <Back color={COLOR.gray[900]} />,
+    left: () => <Back />,
     center: ({ title }) => <Title title={title} size="small" />,
     right: () => <Like color={COLOR.gray[900]} />,
   },
