@@ -1,6 +1,6 @@
 import { View, Text } from "react-native";
 
-export default function MyPageIndexScreen() {
+export default function MyPageAddPlaceScreen() {
   return (
     <View>
       <Text>MyPageScreen</Text>
