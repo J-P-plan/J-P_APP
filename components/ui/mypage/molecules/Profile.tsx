@@ -1,5 +1,6 @@
 import { Image, Pressable, Text, View } from "react-native";
 import type { UserCompactResDto } from "@/lib/types/api/common";
+import ContentWrapper from "@/components/common/layout/ContentWrapper";
 import EditIcon from "@/assets/icons/common/edit.svg";
 
 interface Props {
@@ -8,10 +9,7 @@ interface Props {
 
 export default function Profile({ profile }: Props) {
   return (
-    <View
-      tw="flex-row items-end w-[343px] my-4 mx-auto px-3"
-      style={{ gap: 24 }}
-    >
+    <ContentWrapper tw="flex-row items-end my-4 px-3" style={{ gap: 24 }}>
       {profile.picture ? (
         <Image
           source={{ uri: profile.picture }}
@@ -28,6 +26,6 @@ export default function Profile({ profile }: Props) {
           <Text tw="font-normal text-sm text-gray-700">{"프로필 수정"}</Text>
         </Pressable>
       </View>
-    </View>
+    </ContentWrapper>
   );
 }
