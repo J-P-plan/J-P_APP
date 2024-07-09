@@ -12,7 +12,7 @@ interface Props {}
 
 export default function MypageIndexScreen({}: Props) {
   return (
-    <SafeAreaView tw="flex-1 mb-10">
+    <SafeAreaView tw="flex-1 mb-20">
       <Profile profile={profile} />
       <MypageTabSection />
     </SafeAreaView>
