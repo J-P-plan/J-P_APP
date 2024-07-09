@@ -21,14 +21,12 @@ export default function MyPageLayout() {
       <Stack.Screen
         name="index"
         options={{
-          headerTransparent: true,
           header: () => <MypageHeader type="index" title={headerTitle.index} />,
         }}
       />
       <Stack.Screen
         name="write-log"
         options={{
-          headerTransparent: true,
           header: () => (
             <MypageHeader type="write-log" title={headerTitle["write-log"]} />
           ),
@@ -37,7 +35,6 @@ export default function MyPageLayout() {
       <Stack.Screen
         name="write-review"
         options={{
-          headerTransparent: true,
           header: () => (
             <MypageHeader
               type="write-review"
@@ -49,7 +46,6 @@ export default function MyPageLayout() {
       <Stack.Screen
         name="add-place"
         options={{
-          headerTransparent: true,
           header: () => (
             <MypageHeader type="add-place" title={headerTitle["add-place"]} />
           ),
