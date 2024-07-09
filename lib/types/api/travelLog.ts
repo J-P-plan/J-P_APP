@@ -1,4 +1,4 @@
-import type { PageInfo } from "@/lib/types/api/common";
+import type { PageInfo, UserCompactResDto } from "@/lib/types/api/common";
 
 export interface TravelLogResponse {
   pageInfo: PageInfo;
@@ -13,10 +13,4 @@ export interface TravelLogData {
   commentCnt: number;
   like: number;
   placeId: string;
-}
-
-interface UserCompactResDto {
-  id: number;
-  nickname: string;
-  picture: string;
 }

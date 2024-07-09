@@ -1,4 +1,4 @@
-import type { PageInfo } from "@/lib/types/api/common";
+import type { PageInfo, UserCompactResDto } from "@/lib/types/api/common";
 
 export type TravelReviewType = "review" | "travel-log";
 
@@ -28,12 +28,6 @@ export interface ReviewData {
   star: number;
   placeId: string;
   createdAt: string | null;
-}
-
-interface UserCompactResDto {
-  id: number;
-  nickname: string;
-  picture: string | null;
 }
 
 export interface ReviewResponse {

@@ -1,3 +1,5 @@
+import type { Location } from "@/lib/types/api/common";
+
 export interface PlaceDetailData {
   id: number;
   placeId: string;
@@ -11,9 +13,4 @@ export interface PlaceDetailData {
   likeCount: number;
   userId: number;
   isLiked: boolean;
-}
-
-export interface Location {
-  lat: number;
-  lng: number;
 }
