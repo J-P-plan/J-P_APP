@@ -23,7 +23,7 @@ export default function SearchBar({ currentValue, onSearchScreen }: Props) {
       <SearchIcon tw="w-6 h-6 text-gray-900" />
       <TextInput
         tw="flex-1 ml-[8px] font-normal text-xs"
-        keyboardType="default"
+        inputMode="search"
         placeholder={"여행지를 입력해주세요."}
         placeholderTextColor={COLOR.gray[300]}
         {...textInputProps}
