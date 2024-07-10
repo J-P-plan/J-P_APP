@@ -21,7 +21,10 @@ export function useTextSearchData(
 ): UseQueryResult<TextSearchResponse> {
   return useQuery({
     queryKey: ["text-search-list", term],
-    queryFn: () => fetch(``).then((res) => res.json()),
+    queryFn: () =>
+      fetch(`/api/googlePlace/textSearch?contents=${term}`).then((res) =>
+        res.json()
+      ),
     enabled: !!term,
   });
 }
