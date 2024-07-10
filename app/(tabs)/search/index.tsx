@@ -1,7 +1,8 @@
-import { View, SafeAreaView } from "react-native";
+import { View } from "react-native";
 import { Stack } from "expo-router";
 import Header from "@/components/ui/headers/Header";
 import { Title } from "@/components/ui/headers/atoms/Components";
+import SearchIndexScreen from "@/components/ui/search/IndexScreen";
 
 export default function SearchScreen() {
   return (
@@ -17,7 +18,7 @@ export default function SearchScreen() {
           ),
         }}
       />
-      <SafeAreaView tw="flex-1 mb-20 bg-background"></SafeAreaView>
+      <SearchIndexScreen />
     </>
   );
 }
