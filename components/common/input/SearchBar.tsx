@@ -1,18 +1,29 @@
 import { View } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 import useSearchInput from "@/lib/hooks/common/useSearchInput";
-import SearchIcon from "@/assets/icons/common/search.svg";
 import COLOR from "@/lib/constants/colors";
+import { cn } from "@/lib/util";
+import SearchIcon from "@/assets/icons/common/search.svg";
 
-export default function SearchBar() {
-  const textInputProps = useSearchInput();
+interface Props {
+  currentValue?: string;
+  onSearchScreen?: boolean;
+}
+
+export default function SearchBar({ currentValue, onSearchScreen }: Props) {
+  const textInputProps = useSearchInput(currentValue);
 
   return (
-    <View tw="flex-row items-center w-[343px] h-[56px] mx-auto mb-[28px] px-[22px] rounded-full border-[0.8px] border-gray-200 bg-white">
+    <View
+      tw={cn(
+        "flex-row items-center w-[343px] mx-auto mb-[28px] px-[22px] rounded-full border-[0.8px] border-gray-200 bg-white",
+        onSearchScreen ? "h-[45px]" : "h-[56px]"
+      )}
+    >
       <SearchIcon tw="w-6 h-6 text-gray-900" />
       <TextInput
-        tw="ml-[8px]"
-        keyboardType="default"
+        tw="flex-1 ml-[8px] font-normal text-xs"
+        inputMode="search"
         placeholder={"여행지를 입력해주세요."}
         placeholderTextColor={COLOR.gray[300]}
         {...textInputProps}

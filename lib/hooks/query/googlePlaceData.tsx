@@ -1,5 +1,6 @@
 import { type UseQueryResult, useQuery } from "@tanstack/react-query";
 import type { NearBySearchResponse } from "@/lib/types/api/nearby";
+import type { TextSearchResponse } from "@/lib/types/api/search";
 
 export function useNearByListData(
   lat: string | number | undefined,
@@ -12,5 +13,15 @@ export function useNearByListData(
         res.json()
       ),
     enabled: !!lat && !!lng,
+  });
+}
+
+export function useTextSearchData(
+  term: string | undefined
+): UseQueryResult<TextSearchResponse> {
+  return useQuery({
+    queryKey: ["text-search-list", term],
+    queryFn: () => fetch(``).then((res) => res.json()),
+    enabled: !!term,
   });
 }
