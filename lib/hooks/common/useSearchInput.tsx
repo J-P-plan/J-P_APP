@@ -1,15 +1,19 @@
-import { useState } from "react";
-import { TextInputProps } from "react-native";
-import { NativeViewGestureHandlerProps } from "react-native-gesture-handler";
+import { useEffect, useState } from "react";
 import { useRouter } from "expo-router";
+import type { TextInputProps } from "react-native";
+import type { NativeViewGestureHandlerProps } from "react-native-gesture-handler";
 
-export default function useSearchInput() {
-  const [value, setValue] = useState("");
-  const { push } = useRouter();
+export default function useSearchInput(currentValue: string = "") {
+  const [value, setValue] = useState(currentValue);
+  const { navigate } = useRouter();
+
+  useEffect(() => {
+    setValue(currentValue);
+  }, [currentValue]);
 
   const handleSearch = () => {
     console.log(value);
-    push("/(tabs)/search");
+    navigate(`/(tabs)/search?term=${value}`);
   };
 
   const inputProps: TextInputProps & NativeViewGestureHandlerProps = {
