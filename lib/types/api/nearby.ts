@@ -1,4 +1,4 @@
-import { Location } from "@/lib/types/api/placeDetail";
+import type { Location } from "@/lib/types/api/common";
 
 export interface NearBySearchResponse {
   nextPageToken: string;

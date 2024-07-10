@@ -5,3 +5,14 @@ export interface PageInfo {
   totalElements: number;
   totalPages: number;
 }
+
+export interface Location {
+  lat: number;
+  lng: number;
+}
+
+export interface UserCompactResDto {
+  id: number;
+  nickname: string;
+  picture: string | null;
+}

@@ -1,9 +1,5 @@
-import { View, Text } from "react-native";
+import MypageIndexScreen from "@/components/ui/mypage/IndexScreen";
 
-export default function MyPageScreen() {
-  return (
-    <View>
-      <Text>MyPageScreen</Text>
-    </View>
-  );
+export default function MyPageIndexScreen() {
+  return <MypageIndexScreen />;
 }
