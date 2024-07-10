@@ -36,7 +36,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="search/index"
         options={{
-          headerShown: false,
+          headerShown: true,
           title: "검색",
           tabBarIcon: ({ color }) => <SearchIcon color={color} />,
           tabBarLabelStyle: { fontSize: 10 },
