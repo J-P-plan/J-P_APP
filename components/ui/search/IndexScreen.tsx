@@ -1,6 +1,6 @@
-import { SafeAreaView } from "react-native";
 import { useLocalSearchParams } from "expo-router";
 import { useTextSearchData } from "@/lib/hooks/query/googlePlaceData";
+import { DismissKeyboardSafeAreaView } from "@/components/common/utils/DismissKeyboard";
 import ContentWrapper from "@/components/common/layout/ContentWrapper";
 import SearchBar from "@/components/common/input/SearchBar";
 import NoSearchTerm from "@/components/ui/search/templates/NoSearchTerm";
@@ -12,7 +12,7 @@ export default function SearchIndexScreen() {
   const { data: resultData } = useTextSearchData(term);
 
   return (
-    <SafeAreaView tw="flex-1 mb-20 bg-background">
+    <DismissKeyboardSafeAreaView tw="flex-1 mb-20 bg-background">
       <ContentWrapper>
         <SearchBar currentValue={term} onSearchScreen />
         {!term ? (
@@ -23,6 +23,6 @@ export default function SearchIndexScreen() {
           <NoSearchResult />
         )}
       </ContentWrapper>
-    </SafeAreaView>
+    </DismissKeyboardSafeAreaView>
   );
 }
